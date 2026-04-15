@@ -1,0 +1,38 @@
+import { Leaf, Lightbulb, Settings, HeadphonesIcon } from "lucide-react";
+
+const values = [
+  { icon: Leaf, title: "Eco Commitment", desc: "100% recyclable and biodegradable materials sourced responsibly from FSC-certified suppliers." },
+  { icon: Lightbulb, title: "Design Innovation", desc: "Cutting-edge structural and graphic designs that make your brand stand out on shelves." },
+  { icon: Settings, title: "Tailored Solutions", desc: "Custom packaging built to your exact specifications — any shape, size, or finish." },
+  { icon: HeadphonesIcon, title: "Dedicated Support", desc: "End-to-end guidance from concept to delivery. Your dedicated account manager, every step." },
+];
+
+const EcoValuesSection = () => (
+  <section id="why-us" className="py-20 md:py-28 bg-eco-light">
+    <div className="container">
+      <div className="text-center max-w-2xl mx-auto mb-14">
+        <span className="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-semibold mb-4 tracking-wide uppercase">
+          Our Values
+        </span>
+        <h2 className="text-3xl md:text-4xl font-extrabold text-foreground">Why Choose AAAPAK?</h2>
+        <p className="mt-4 text-muted-foreground text-lg">Values that drive every package we create.</p>
+      </div>
+      <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {values.map((v) => (
+          <div
+            key={v.title}
+            className="bg-card rounded-xl border border-border p-7 text-center hover:shadow-lg transition-shadow duration-300"
+          >
+            <div className="w-14 h-14 mx-auto rounded-full bg-primary/10 flex items-center justify-center mb-5">
+              <v.icon className="w-6 h-6 text-primary" />
+            </div>
+            <h3 className="font-heading font-bold text-foreground mb-2">{v.title}</h3>
+            <p className="text-sm text-muted-foreground">{v.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+);
+
+export default EcoValuesSection;

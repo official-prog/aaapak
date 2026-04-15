@@ -1,0 +1,43 @@
+import ProductCard from "./ProductCard";
+import corrugated from "@/assets/product-corrugated.png";
+import mailer from "@/assets/product-mailer.png";
+import rigid from "@/assets/product-rigid.png";
+import shoppingBag from "@/assets/product-shopping-bag.png";
+import pouch from "@/assets/product-pouch.png";
+import paperBag from "@/assets/product-paper-bag.png";
+import foldingCarton from "@/assets/product-folding-carton.png";
+import display from "@/assets/product-display.png";
+
+const products = [
+  { name: "Corrugated Boxes", description: "Durable custom shipping & storage solutions", image: corrugated },
+  { name: "Mailer Boxes", description: "Branded e-commerce mailers your customers love", image: mailer },
+  { name: "Rigid Boxes", description: "Premium luxury presentation packaging", image: rigid },
+  { name: "Shopping Bags", description: "Custom printed retail carry bags", image: shoppingBag },
+  { name: "Pouches", description: "Flexible stand-up pouches for every product", image: pouch },
+  { name: "Paper Bags", description: "Eco-friendly kraft paper bags", image: paperBag },
+  { name: "Folding Cartons", description: "Custom printed carton packaging", image: foldingCarton },
+  { name: "Display Boxes", description: "Point-of-sale display stands & packaging", image: display },
+];
+
+const ProductsSection = () => (
+  <section id="products" className="py-20 md:py-28 bg-background">
+    <div className="container">
+      <div className="text-center max-w-2xl mx-auto mb-14">
+        <span className="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-semibold mb-4 tracking-wide uppercase">
+          Our Products
+        </span>
+        <h2 className="text-3xl md:text-4xl font-extrabold text-foreground">Complete Packaging Solutions</h2>
+        <p className="mt-4 text-muted-foreground text-lg">
+          Premium custom packaging for every industry and brand need.
+        </p>
+      </div>
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
+        {products.map((p) => (
+          <ProductCard key={p.name} {...p} />
+        ))}
+      </div>
+    </div>
+  </section>
+);
+
+export default ProductsSection;
