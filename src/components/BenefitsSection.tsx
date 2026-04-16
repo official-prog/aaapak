@@ -2,11 +2,11 @@ import { Shield, Truck, Award, Clock, DollarSign, Palette } from "lucide-react";
 
 const benefits = [
   { icon: Shield, title: "Premium Quality", desc: "Rigorous quality control at every stage of production." },
-  { icon: Truck, title: "Free Shipping", desc: "Free delivery across USA & Canada on orders over $2,500." },
+  { icon: Truck, title: "Nationwide Shipping", desc: "Reliable delivery across USA & Canada with tracking." },
   { icon: Award, title: "FSC Certified", desc: "Sustainably sourced materials with full chain-of-custody." },
   { icon: Clock, title: "Fast Turnaround", desc: "10–15 business day production with rush options available." },
   { icon: DollarSign, title: "Competitive Pricing", desc: "Factory-direct pricing with no middleman markups." },
-  { icon: Palette, title: "Free Design Support", desc: "Expert designers help bring your vision to life at no cost." },
+  { icon: Palette, title: "Expert Design Support", desc: "Professional designers help bring your vision to life with custom packaging solutions." },
 ];
 
 const BenefitsSection = () => (
@@ -17,7 +17,7 @@ const BenefitsSection = () => (
           Why Choose Us
         </span>
         <h2 className="text-3xl md:text-4xl font-extrabold text-foreground">
-          The AAAPAK Advantage
+          The AAA PAK Advantage
         </h2>
         <p className="mt-4 text-muted-foreground text-lg">
           Everything you need for exceptional custom packaging, under one roof.

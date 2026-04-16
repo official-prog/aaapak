@@ -14,7 +14,7 @@ const EcoValuesSection = () => (
         <span className="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-semibold mb-4 tracking-wide uppercase">
           Our Values
         </span>
-        <h2 className="text-3xl md:text-4xl font-extrabold text-foreground">Why Choose AAAPAK?</h2>
+        <h2 className="text-3xl md:text-4xl font-extrabold text-foreground">Why Choose AAA PAK?</h2>
         <p className="mt-4 text-muted-foreground text-lg">Values that drive every package we create.</p>
       </div>
       <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">

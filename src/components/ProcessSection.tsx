@@ -1,10 +1,10 @@
 import { PenTool, Box, CheckCircle, Factory } from "lucide-react";
 
 const steps = [
-  { icon: PenTool, step: "01", title: "Design & Concept", desc: "Share your vision — our designers create custom mockups and 3D renders for free." },
+  { icon: PenTool, step: "01", title: "Design & Concept", desc: "Share your vision — our designers create custom mockups and 3D renders to bring your ideas to life." },
   { icon: Box, step: "02", title: "Sample & Prototype", desc: "Receive physical samples to review quality, fit, and finish before committing." },
   { icon: CheckCircle, step: "03", title: "Quality Assurance", desc: "Rigorous multi-point inspection ensures every detail meets our premium standards." },
-  { icon: Factory, step: "04", title: "Production & Delivery", desc: "Scaled manufacturing with free shipping across USA & Canada in 10–15 days." },
+  { icon: Factory, step: "04", title: "Production & Delivery", desc: "Scaled manufacturing with reliable shipping across USA & Canada in 10–15 days." },
 ];
 
 const ProcessSection = () => (
