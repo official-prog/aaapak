@@ -20,14 +20,14 @@ const HeroSection = () => {
         {/* Banner as full background */}
         <img
           src={heroBanner}
-          alt="Custom packaging product range by AAA PAK"
+          alt="Custom packaging product range by AAA Pak"
           className="absolute inset-0 w-full h-full object-cover object-center"
         />
 
         {/* Left gradient overlay for text readability */}
         <div className="absolute inset-0" style={{ background: 'linear-gradient(to right, rgba(253,240,220,0.97) 0%, rgba(253,240,220,0.92) 35%, rgba(253,240,220,0.5) 60%, transparent 80%)' }} />
 
-        {/* Text content — left side */}
+        {/* Text content - left side */}
         <div className="relative container py-16 md:py-24">
           <div className="max-w-lg animate-fade-in-up">
             <span className="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-semibold mb-5 tracking-wide uppercase">
@@ -42,7 +42,7 @@ const HeroSection = () => {
               </h2>
             </div>
             <p className="mt-4 text-lg text-muted-foreground leading-relaxed max-w-md">
-              Order personalized, high-quality custom printed packaging and branded boxes your customers will love — all in one place.
+              Order personalized, high-quality custom printed packaging and branded boxes your customers will love, all in one place.
             </p>
             <div className="mt-8 flex flex-wrap gap-4">
               <Button size="lg" className="font-semibold text-base px-8" onClick={() => setQuoteOpen(true)}>

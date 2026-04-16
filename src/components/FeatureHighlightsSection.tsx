@@ -1,3 +1,5 @@
+import featureHighlight from "@/assets/feature-highlight.jpg";
+
 const features = [
   { prefix: "UP TO", value: "30%", title: "Cost & production efficiency" },
   { prefix: "UP TO", value: "50%", title: "More sustainable packing material" },
@@ -16,9 +18,16 @@ const FeatureHighlightsSection = () => (
           <h2 className="text-3xl md:text-4xl font-extrabold text-foreground leading-tight mb-5">
             We deliver measurable packaging results that move your business forward.
           </h2>
-          <p className="text-muted-foreground text-lg leading-relaxed">
+          <p className="text-muted-foreground text-lg leading-relaxed mb-8">
             Our process is built for efficiency, sustainability, and brand impact. These key performance areas are designed to help you save cost, reduce material waste, and strengthen your market presence.
           </p>
+          <div className="rounded-2xl overflow-hidden shadow-xl">
+            <img
+              src={featureHighlight}
+              alt="AAA Pak packaging solutions"
+              className="w-full h-56 object-cover"
+            />
+          </div>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">

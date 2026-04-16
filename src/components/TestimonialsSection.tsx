@@ -1,10 +1,10 @@
 import { Star } from "lucide-react";
 
 const testimonials = [
-  { name: "Sarah Mitchell", role: "Brand Manager, Luxe Beauty Co.", text: "AAA PAK transformed our brand perception. The custom rigid boxes are stunning and our unboxing experience has become a viral moment on social media." },
+  { name: "Sarah Mitchell", role: "Brand Manager, Luxe Beauty Co.", text: "AAA Pak transformed our brand perception. The custom rigid boxes are stunning and our unboxing experience has become a viral moment on social media." },
   { name: "James Torres", role: "Operations Lead, FreshFoods Inc.", text: "Reliable, eco-friendly, and beautifully designed. Our corrugated shipping boxes reduced product damage by 40% while looking incredible." },
   { name: "Lisa Kim", role: "Founder, Bloom Boutique", text: "The custom mailer boxes are a hit! Perfect print quality, fast delivery, and they feel as premium as they look. Our customers love the unboxing." },
-  { name: "David Chen", role: "CEO, TechGear Pro", text: "We switched to AAA PAK for our electronics packaging and saw a 25% increase in positive reviews mentioning packaging quality. Game changer." },
+  { name: "David Chen", role: "CEO, TechGear Pro", text: "We switched to AAA Pak for our electronics packaging and saw a 25% increase in positive reviews mentioning packaging quality. Game changer." },
 ];
 
 const TestimonialsSection = () => (
@@ -15,7 +15,7 @@ const TestimonialsSection = () => (
           Testimonials
         </span>
         <h2 className="text-3xl md:text-4xl font-extrabold text-foreground">What Our Clients Say</h2>
-        <p className="mt-4 text-muted-foreground text-lg">Join 300+ brands that trust AAA PAK for their packaging needs.</p>
+        <p className="mt-4 text-muted-foreground text-lg">Join 300+ brands that trust AAA Pak for their packaging needs.</p>
       </div>
       <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
         {testimonials.map((t) => (

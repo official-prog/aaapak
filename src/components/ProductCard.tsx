@@ -14,14 +14,14 @@ const ProductCard = ({ name, description, image }: ProductCardProps) => {
   return (
     <>
       <div className="group bg-card rounded-xl border border-border shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden flex flex-col">
-        <div className="aspect-square bg-muted flex items-center justify-center p-6 overflow-hidden">
+        <div className="aspect-square bg-muted flex items-center justify-center overflow-hidden">
           <img
             src={image}
             alt={name}
             loading="lazy"
             width={512}
             height={512}
-            className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500"
+            className="w-full h-full object-contain scale-[1.15] group-hover:scale-[1.2] transition-transform duration-500"
           />
         </div>
         <div className="p-5 flex flex-col flex-1">

@@ -17,7 +17,7 @@ const BenefitsSection = () => (
           Why Choose Us
         </span>
         <h2 className="text-3xl md:text-4xl font-extrabold text-foreground">
-          The AAA PAK Advantage
+          The AAA Pak Advantage
         </h2>
         <p className="mt-4 text-muted-foreground text-lg">
           Everything you need for exceptional custom packaging, under one roof.

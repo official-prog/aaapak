@@ -8,7 +8,7 @@ const navLinks = [
   { label: "Products", href: "#products" },
   { label: "Services", href: "#services" },
   { label: "Industries", href: "#industries" },
-  { label: "Why AAA PAK", href: "#why-us" },
+  { label: "Why AAA Pak", href: "#why-us" },
   { label: "Process", href: "#process" },
 ];
 
@@ -22,7 +22,7 @@ const Header = () => {
       {/* Top bar */}
       <div className="bg-foreground text-primary-foreground">
         <div className="container flex items-center justify-between h-9 text-xs">
-          <span className="hidden sm:inline">Custom Packaging for USA & Canada — Standard Shipping Rates Apply</span>
+          <span className="hidden sm:inline">Custom Packaging for USA & Canada. Standard Shipping Rates Apply</span>
           <div className="flex items-center gap-4">
             <a href="tel:+18882288165" className="flex items-center gap-1.5 hover:text-primary transition-colors">
               <Phone className="w-3 h-3" />

@@ -4,19 +4,23 @@ import mailer from "@/assets/product-mailer.png";
 import rigid from "@/assets/product-rigid.png";
 import shoppingBag from "@/assets/product-shopping-bag.png";
 import pouch from "@/assets/product-pouch.png";
-import paperBag from "@/assets/product-paper-bag.png";
+import paperBag from "@/assets/product-paper-bag.jpg";
 import foldingCarton from "@/assets/product-folding-carton.png";
 import display from "@/assets/product-display.png";
+import inserts from "@/assets/product-inserts.jpg";
+import restaurants from "@/assets/product-restaurants.png";
 
 const products = [
   { name: "Corrugated Boxes", description: "Durable custom shipping & storage solutions", image: corrugated },
-  { name: "Mailer Boxes", description: "Branded e-commerce mailers your customers love", image: mailer },
+  { name: "Mailer Shipping Bag", description: "Branded e-commerce mailers your customers love", image: mailer },
   { name: "Rigid Boxes", description: "Premium luxury presentation packaging", image: rigid },
-  { name: "Shopping Bags", description: "Custom printed retail carry bags", image: shoppingBag },
+  { name: "Reusable Shopping Bag", description: "Custom printed retail carry bags", image: shoppingBag },
   { name: "Pouches", description: "Flexible stand-up pouches for every product", image: pouch },
   { name: "Paper Bags", description: "Eco-friendly kraft paper bags", image: paperBag },
   { name: "Folding Cartons", description: "Custom printed carton packaging", image: foldingCarton },
-  { name: "Display Boxes", description: "Point-of-sale display stands & packaging", image: display },
+  { name: "Displays", description: "Point-of-sale display stands & packaging", image: display },
+  { name: "Restaurants", description: "Custom packaging solutions for restaurants", image: restaurants },
+  { name: "Inserts", description: "Custom box inserts for protection & presentation", image: inserts },
 ];
 
 const ProductsSection = () => (
@@ -31,7 +35,7 @@ const ProductsSection = () => (
           Premium custom packaging for every industry and brand need.
         </p>
       </div>
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6">
         {products.map((p) => (
           <ProductCard key={p.name} {...p} />
         ))}

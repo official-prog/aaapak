@@ -1,10 +1,13 @@
-import { PenTool, Box, CheckCircle, Factory } from "lucide-react";
+import procDesign from "@/assets/proc-design.jpg";
+import procPrototype from "@/assets/proc-prototype.jpg";
+import procQa from "@/assets/proc-qa.jpg";
+import procProduction from "@/assets/proc-production.png";
 
 const steps = [
-  { icon: PenTool, step: "01", title: "Design & Concept", desc: "Share your vision — our designers create custom mockups and 3D renders to bring your ideas to life." },
-  { icon: Box, step: "02", title: "Sample & Prototype", desc: "Receive physical samples to review quality, fit, and finish before committing." },
-  { icon: CheckCircle, step: "03", title: "Quality Assurance", desc: "Rigorous multi-point inspection ensures every detail meets our premium standards." },
-  { icon: Factory, step: "04", title: "Production & Delivery", desc: "Scaled manufacturing with reliable shipping across USA & Canada in 10–15 days." },
+  { image: procDesign,     step: "01", title: "Structural Design and Development",    desc: "Share your vision. Our designers create custom mockups and 3D renders to bring your ideas to life." },
+  { image: procPrototype,  step: "02", title: "Prototyping & Sample Creation",  desc: "Receive physical samples to review quality, fit, and finish before committing." },
+  { image: procQa,         step: "03", title: "Creative Artwork & Branding",   desc: "Our design team transforms concepts into visually striking packaging artwork that captures your brand's essence and captivates your audience." },
+  { image: procProduction, step: "04", title: "Production & Delivery", desc: "AAA Pak delivers eco-friendly, customized packaging that helps businesses go green, building a sustainable future, one package at a time." },
 ];
 
 const ProcessSection = () => (
@@ -15,19 +18,25 @@ const ProcessSection = () => (
           How It Works
         </span>
         <h2 className="text-3xl md:text-4xl font-extrabold text-foreground">Our Simple 4-Step Process</h2>
-        <p className="mt-4 text-muted-foreground text-lg">From idea to delivery — we make custom packaging effortless.</p>
+        <p className="mt-4 text-muted-foreground text-lg">From idea to delivery, we make custom packaging effortless.</p>
       </div>
       <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
         {steps.map((s, i) => (
-          <div key={s.title} className="relative bg-secondary rounded-xl border border-border p-7 hover:shadow-lg transition-shadow duration-300">
-            <span className="text-5xl font-extrabold text-primary/10 absolute top-4 right-5">{s.step}</span>
-            <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-5">
-              <s.icon className="w-5 h-5 text-primary" />
+          <div key={s.title} className="relative bg-secondary rounded-xl border border-border overflow-hidden hover:shadow-lg transition-shadow duration-300 group">
+            <div className="h-44 overflow-hidden">
+              <img
+                src={s.image}
+                alt={s.title}
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              />
             </div>
-            <h3 className="font-heading font-bold text-foreground mb-2">{s.title}</h3>
-            <p className="text-sm text-muted-foreground">{s.desc}</p>
+            <div className="p-6 relative">
+              <span className="text-5xl font-extrabold text-primary/10 absolute top-2 right-4">{s.step}</span>
+              <h3 className="font-heading font-bold text-foreground mb-2">{s.title}</h3>
+              <p className="text-sm text-muted-foreground">{s.desc}</p>
+            </div>
             {i < steps.length - 1 && (
-              <div className="hidden lg:block absolute top-1/2 -right-3 w-6 h-0.5 bg-border" />
+              <div className="hidden lg:block absolute top-1/2 -right-3 w-6 h-0.5 bg-border z-10" />
             )}
           </div>
         ))}

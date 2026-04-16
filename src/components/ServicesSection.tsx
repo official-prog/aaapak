@@ -1,18 +1,20 @@
-import { Box, Leaf, ShoppingBag } from "lucide-react";
+import svcCustomBoxes from "@/assets/svc-custom-boxes.png";
+import svcEco from "@/assets/svc-eco.png";
+import svcRetail from "@/assets/svc-retail.jpg";
 
 const services = [
   {
-    icon: Box,
+    image: svcCustomBoxes,
     title: "Custom Boxes",
-    desc: "Fully customized boxes in any shape, size, and print. From mailer boxes to rigid packaging — built to your exact specifications.",
+    desc: "Fully customized boxes in any shape, size, and print. From mailer boxes to rigid packaging, built to your exact specifications.",
   },
   {
-    icon: Leaf,
+    image: svcEco,
     title: "Eco-Friendly Packaging",
     desc: "100% recyclable and biodegradable packaging solutions. FSC-certified materials that protect your products and the planet.",
   },
   {
-    icon: ShoppingBag,
+    image: svcRetail,
     title: "Retail Packaging",
     desc: "Shelf-ready retail packaging that makes your brand stand out. Custom printed cartons, displays, and POS packaging.",
   },
@@ -36,13 +38,19 @@ const ServicesSection = () => (
         {services.map((s) => (
           <div
             key={s.title}
-            className="bg-secondary rounded-xl p-8 hover:shadow-lg transition-all duration-300 group border border-transparent hover:border-primary/20"
+            className="bg-secondary rounded-xl overflow-hidden hover:shadow-lg transition-all duration-300 group border border-transparent hover:border-primary/20"
           >
-            <div className="w-14 h-14 rounded-xl bg-primary/10 group-hover:bg-primary group-hover:text-primary-foreground flex items-center justify-center mb-6 transition-colors duration-300">
-              <s.icon className="w-6 h-6 text-primary group-hover:text-primary-foreground transition-colors duration-300" />
+            <div className="h-52 overflow-hidden">
+              <img
+                src={s.image}
+                alt={s.title}
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              />
             </div>
-            <h3 className="font-heading font-bold text-xl text-foreground mb-3">{s.title}</h3>
-            <p className="text-muted-foreground leading-relaxed">{s.desc}</p>
+            <div className="p-7">
+              <h3 className="font-heading font-bold text-xl text-foreground mb-3">{s.title}</h3>
+              <p className="text-muted-foreground leading-relaxed">{s.desc}</p>
+            </div>
           </div>
         ))}
       </div>

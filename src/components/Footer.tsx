@@ -52,7 +52,6 @@ const Footer = () => {
             links: [
               { label: "About Us", href: "#why-us" },
               { label: "Sustainability", href: "#why-us" },
-              { label: "Careers", href: "#contact" },
               { label: "Blog", href: "#services" },
               { label: "Contact", href: "#contact" },
             ],

@@ -9,6 +9,8 @@ import BenefitsSection from "@/components/BenefitsSection";
 import FeatureHighlightsSection from "@/components/FeatureHighlightsSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import IndustriesSection from "@/components/IndustriesSection";
+import PackagingGallerySection from "@/components/PackagingGallerySection";
+import PackagingShowcaseSection from "@/components/PackagingShowcaseSection";
 import FAQSection from "@/components/FAQSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
@@ -23,9 +25,11 @@ const Index = () => (
       <FeatureHighlightsSection />
       <ServicesSection />
       <ProductsSection />
+      <PackagingGallerySection />
       <EcoValuesSection />
       <ProcessSection />
       <BenefitsSection />
+      <PackagingShowcaseSection />
       <TestimonialsSection />
       <IndustriesSection />
       <FAQSection />

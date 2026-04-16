@@ -4,43 +4,103 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { ReactNode } from "react";
 
-const faqs = [
+const moqTable = (
+  <div className="mt-3 overflow-x-auto rounded-lg border border-border">
+    <table className="w-full text-sm">
+      <thead>
+        <tr className="bg-primary/10">
+          <th className="text-left px-4 py-3 font-semibold text-foreground">Product</th>
+          <th className="text-left px-4 py-3 font-semibold text-foreground">Minimum Quantity</th>
+        </tr>
+      </thead>
+      <tbody>
+        {[
+          ["Folding Carton Boxes",        "1,000 boxes"],
+          ["Corrugated Boxes",            "500 boxes"],
+          ["Rigid Boxes",                 "500 boxes"],
+          ["Paper Bags",                  "1,000 bags"],
+          ["Gusset Bags",                 "10,000 bags"],
+          ["Stand-up Pouches",            "10,000 pouches"],
+          ["Kraft Pouches",               "10,000 pouches"],
+          ["Floor Displays",              "100 displays"],
+          ["Cardboard Inserts",           "1,000 inserts"],
+          ["Molded Pulp Inserts",         "10,000 inserts"],
+          ["Food Grade Paper Inserts",    "5,000 inserts"],
+          ["Food Grade Boxes",            "5,000 boxes"],
+          ["Cup Sleeves",                 "10,000 sleeves"],
+          ["Labels & Stickers",           "1,000 labels"],
+          ["Kraft Paper Mailers",         "10,000 mailers"],
+          ["Poly Mailers",                "10,000 mailers"],
+          ["Recycled Bubble Mailers",     "10,000 mailers"],
+          ["Bubble Mailers",              "10,000 mailers"],
+          ["Packing Tape",                "500 rolls"],
+          ["Tissue Paper",                "10,000 sheets"],
+          ["Food Grade Tissue Paper",     "10,000 sheets"],
+        ].map(([product, qty], i) => (
+          <tr key={product} className={i % 2 === 0 ? "bg-card" : "bg-secondary"}>
+            <td className="px-4 py-2.5 text-foreground">{product}</td>
+            <td className="px-4 py-2.5 font-medium text-primary">{qty}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+);
+
+const faqs: { q: string; a: ReactNode }[] = [
   {
-    q: "What is the minimum order quantity?",
-    a: "Our minimum order quantity (MOQ) starts at just 100 units for most product types — including corrugated boxes, mailer boxes, folding cartons, and shopping bags. For specialty items like rigid boxes or custom pouches, the MOQ may start at 50 units. We designed our MOQs to be accessible for small businesses, startups, and growing brands, so you don't need to overcommit on inventory before testing the market. If you're unsure which quantity is right for you, our team is happy to guide you based on your budget and sales volume.",
+    q: "What is your required minimum order quantity (MOQ)?",
+    a: moqTable,
   },
   {
-    q: "How long does production take?",
-    a: "Standard production time is 10–15 business days after your final artwork has been approved. This includes printing, cutting, folding, and quality inspection before shipment. If you need your order faster, we offer a Rush Production option that can be completed in 5–7 business days for an additional fee — ideal for product launches, seasonal campaigns, or trade shows. Shipping transit time is separate and depends on your location within the USA or Canada. We always recommend ordering early to avoid last-minute stress.",
+    q: "How long does it take to complete an order?",
+    a: "The turnaround for your packaging project depends on its complexity and specifications, which are assessed during your consultation. Since every order is unique, offering a firm completion date upfront isn't always possible. We suggest reviewing our typical turnaround timelines for a general idea of production time, noting that peak periods may affect these estimates.",
   },
   {
-    q: "Do you offer free samples?",
-    a: "Yes! We offer free generic (unprinted) samples so you can physically evaluate the material quality, box structure, and finish before placing your order. These are shipped at no cost within North America. If you'd like a custom-printed sample with your actual artwork and branding, we can produce one for a small sample fee — which is fully credited back to your account when you place your full production order. Seeing and touching your packaging before committing to a large run is something we strongly encourage.",
+    q: "Can I increase or reduce my order quantity?",
+    a: "Yes, you can increase or reduce your order quantity as long as the final proof has not been approved. Please contact your Product Specialist as early as possible to request a change in quantity. Your order will be reviewed again, and an updated quotation will be provided based on the revised volume. After the final proof is approved and production has started, no further changes to the order quantity can be made.",
   },
   {
-    q: "What materials do you use?",
-    a: "We use only responsibly sourced, high-quality materials across all our product lines. Our corrugated and kraft packaging is made from FSC-certified paperboard, ensuring sustainable forest management. Rigid boxes use premium greyboard with art paper lamination. We print using soy-based or water-based inks that are low in VOCs and safe for food-adjacent packaging. All our materials are recyclable, and many options — including kraft and corrugated — are biodegradable. We can also provide eco-certified material documentation upon request for brands with sustainability commitments.",
+    q: "Am I allowed to cancel my order?",
+    a: "Yes, you may cancel your order if the final proof has not yet been approved. Please contact your Product Specialist to request a cancellation. Once the final proof is approved and the order enters mass production, it can no longer be changed or canceled.",
   },
   {
-    q: "Do you ship to Canada?",
-    a: "Absolutely. We proudly serve both the United States and Canada with standard and expedited shipping options. Our fulfillment centers are strategically located to minimize transit times for customers in Toronto, Vancouver, Montreal, Calgary, and beyond. Standard shipping typically takes 3–7 business days depending on your location. We also offer expedited 1–3 day delivery for urgent orders. All shipments are fully tracked, and you'll receive a tracking number as soon as your order leaves our facility.",
+    q: "Will I get to review a preview of my design?",
+    a: "Before we begin production, our Pre-Press Team checks your file for issues and sends you a proof for confirmation. If your artwork isn't print-ready, we'll notify you and help correct it before moving ahead.",
   },
   {
-    q: "Can you help with packaging design?",
-    a: "Yes — our in-house creative team offers full packaging design support at no extra cost for qualifying orders. Simply share your logo, brand colors, fonts, and any reference images or ideas, and our designers will create a professionally crafted dieline mockup for your review. We work with you through revisions until the design is exactly right. If you already have print-ready artwork, we'll perform a pre-press check to ensure color accuracy, bleed, and file specs are all production-ready. We support AI, PDF, and PSD file formats.",
+    q: "How can I track the progress of my order?",
+    a: "For any order updates, you can either connect with your assigned Product Specialist directly or call our helpline. They'll provide up-to-date information on your order's status.",
   },
   {
-    q: "What printing options are available?",
-    a: "We offer a wide range of printing and finishing options to make your packaging stand out. Printing methods include CMYK offset printing, digital printing for short runs, and Pantone (PMS) color matching for precise brand consistency. Finishing options include gloss or matte lamination, soft-touch lamination, spot UV coating, embossing, debossing, foil stamping (gold, silver, holographic), and aqueous coating. These finishes not only enhance visual appeal but also improve durability and unboxing experience — a key factor in customer retention and social sharing.",
+    q: "Do you supply custom inserts?",
+    a: "Yes, we provide fully customized inserts created by our experienced Structural Engineering Team to ensure a perfect fit for your packaging. For precise dimensions, you may send us a product sample or share a 3D CAD file for accurate fitting. Minimum order quantities apply for inserts ordered separately, but these can be adjusted when inserts are ordered together with boxes.",
   },
   {
-    q: "How do I place an order?",
-    a: "Placing an order with AAA PAK is simple. Start by filling out our Get a Quote form on this page or emailing us at quote@aaapak.com with your product type, dimensions, quantity, and any design files you have. Our team will respond within 2 business hours with a detailed quote. Once you approve the quote and submit your artwork, we'll send a digital proof for your sign-off before production begins. We accept payment via credit card, wire transfer, and PayPal. For repeat customers, we offer net payment terms after the first order.",
+    q: "Is it possible to update details on an order I've already placed?",
+    a: "Yes, it is possible to update your order as long as it has not entered production. You may request changes by contacting your Product Specialist. Any updates to artwork or specifications must be completed before the final proof is approved. If production has already begun, certain adjustments may still be possible if requested immediately, although additional fees may apply for complex changes.",
   },
   {
-    q: "Do you offer custom sizes and shapes?",
-    a: "Yes — we specialize in fully custom packaging. You are not limited to standard sizes. We can manufacture boxes, bags, pouches, and cartons in any dimension you require, including non-standard shapes, window cutouts, magnetic closures, drawer-style openings, and more. Simply provide us with your desired dimensions (length × width × depth) or a product sample, and we'll engineer a dieline that fits perfectly. Custom structural design is included as part of our quoting process.",
+    q: "Do you offer express or rush production services?",
+    a: "Depending on our current production volume and scheduling, we may be able to fast-track your order. We recommend checking with a Product Specialist to see if expedited options are available at the time you order.",
+  },
+  {
+    q: "What's the procedure for placing a repeat order?",
+    a: "Placing a repeat order is very simple. You may contact your original Product Specialist or send your request to quote@aaapak.com or call +1 888 228 8165 (Monday to Friday, 9:30am to 5:00pm EST). A member of our team will assist you promptly with confirming and processing your reorder.",
+  },
+  {
+    q: "How is the packaging order process structured?",
+    a: "Although each project is unique, most follow a similar workflow: Consultation to review project needs, Quotation based on your specifications, Structural design and artwork setup, Sample creation and prototyping, Pre-press and final proof approval, Full production, Shipping and fulfillment. For specifics on your project's process, speak with your Product Specialist.",
+  },
+  {
+    q: "Is it possible to modify my design after the order has been placed?",
+    a: "Once the final proof is approved, design changes usually can't be made because production may have begun. However, if you notify your Product Specialist immediately, we'll do our best to halt production and accommodate your revision. If adjustments require restarting production, additional charges will apply, which will be added to your updated invoice.",
+  },
+  {
+    q: "How can I request a price estimate for my packaging?",
+    a: "You have multiple convenient ways to request a quote: Contact us directly via call, live chat, or email quote@aaapak.com during business hours; use our quote request form by completing the form on our website with your details; or request via product pages by adding products to your quote list, completing the specs, and submitting. To streamline your request, it's helpful to have your packaging type, quantity, size, and print details ready in advance. Response times are typically 1 to 2 business days, though it may extend to 2 to 4 days during peak seasons.",
   },
 ];
 

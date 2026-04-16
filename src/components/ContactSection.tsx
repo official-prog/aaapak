@@ -249,7 +249,7 @@ const ContactSection = () => {
               <Input placeholder="Phone Number" />
             </div>
             <Input placeholder="Product Type (e.g. Mailer Boxes, Rigid Boxes)" />
-            <Textarea placeholder="Tell us about your project — quantity, size, materials, timeline..." className="min-h-[120px]" />
+            <Textarea placeholder="Tell us about your project: quantity, size, materials, timeline..." className="min-h-[120px]" />
             <Button className="w-full font-semibold text-base h-12" type="submit">
               Submit Quote Request
             </Button>
