@@ -39,7 +39,7 @@ const ContactSection = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     const g = (id: string) => (document.getElementById(id) as HTMLInputElement | HTMLTextAreaElement).value;
-    const data = {
+    const params = new URLSearchParams({
       firstName:          g("firstName"),
       lastName:           g("lastName"),
       email:              g("email"),
@@ -51,10 +51,10 @@ const ContactSection = () => {
       couponCode:         g("couponCode"),
       message:            g("message"),
       projectDescription: g("projectDescription"),
-    };
+    });
     await fetch(
       "https://script.google.com/macros/s/AKfycbxUWgvBHfCUwCgJXq0YxMMcrzV9MwOrg5F532ltRaXPgaYJhqeIrjuJU3H5k8nPnXTR8w/exec",
-      { method: "POST", mode: "no-cors", body: JSON.stringify(data) }
+      { method: "POST", mode: "no-cors", body: params }
     );
     setShowPopup(true);
     (e.target as HTMLFormElement).reset();
