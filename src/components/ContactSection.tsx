@@ -39,25 +39,22 @@ const ContactSection = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     const g = (id: string) => (document.getElementById(id) as HTMLInputElement | HTMLTextAreaElement).value;
-    const params = new URLSearchParams({
-      firstName:          g("firstName"),
-      lastName:           g("lastName"),
-      email:              g("email"),
-      phone:              g("phone"),
-      company:            g("company"),
-      product:            g("product"),
-      quantity:           g("quantity"),
-      timeFrame:          g("timeFrame"),
-      couponCode:         g("couponCode"),
-      message:            g("message"),
-      projectDescription: g("projectDescription"),
-    });
-    await new Promise<void>((resolve) => {
-      const img = new Image();
-      img.onload = img.onerror = () => resolve();
-      img.src =
-        "https://script.google.com/macros/s/AKfycbw_Gs0Bsx4tYFZtE5LkhYLRFcVSH5lK66fV4YUndk-Jc8Fi1yb49zq9-Lvp9lpZcy8oeA/exec?" +
-        params.toString();
+    await fetch("/api/submit-quote", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        firstName:          g("firstName"),
+        lastName:           g("lastName"),
+        email:              g("email"),
+        phone:              g("phone"),
+        company:            g("company"),
+        product:            g("product"),
+        quantity:           g("quantity"),
+        timeFrame:          g("timeFrame"),
+        couponCode:         g("couponCode"),
+        message:            g("message"),
+        projectDescription: g("projectDescription"),
+      }),
     });
     setShowPopup(true);
     (e.target as HTMLFormElement).reset();
