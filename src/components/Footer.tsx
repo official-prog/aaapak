@@ -36,10 +36,14 @@ const Footer = () => {
   const [email, setEmail] = useState("");
   const [isSubscribed, setIsSubscribed] = useState(false);
 
-  const handleSubscribe = (e: React.FormEvent) => {
+  const handleSubscribe = async (e: React.FormEvent) => {
     e.preventDefault();
     if (email) {
-      // In a real app, this would send the email to a server
+      await fetch("/api/submit-newsletter", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email }),
+      });
       setIsSubscribed(true);
       setEmail("");
       setTimeout(() => setIsSubscribed(false), 3000);

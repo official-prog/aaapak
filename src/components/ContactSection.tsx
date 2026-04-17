@@ -33,6 +33,8 @@ const ContactSection = () => {
   const [consultSubmitted, setConsultSubmitted] = useState(false);
   const [selectedDate, setSelectedDate] = useState<Date | null>(null);
   const [selectedTime, setSelectedTime] = useState<string | null>(null);
+  const [consultName, setConsultName] = useState("");
+  const [consultPhone, setConsultPhone] = useState("");
 
   const availableDates = getAvailableDates();
 
@@ -60,8 +62,18 @@ const ContactSection = () => {
     (e.target as HTMLFormElement).reset();
   };
 
-  const handleConsultSubmit = (e: React.FormEvent) => {
+  const handleConsultSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    await fetch("/api/submit-consultation", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        name:  consultName,
+        phone: consultPhone,
+        date:  selectedDate ? formatDate(selectedDate) : "",
+        time:  selectedTime ?? "",
+      }),
+    });
     setConsultSubmitted(true);
   };
 
@@ -70,6 +82,8 @@ const ContactSection = () => {
     setConsultSubmitted(false);
     setSelectedDate(null);
     setSelectedTime(null);
+    setConsultName("");
+    setConsultPhone("");
   };
 
   return (
@@ -147,8 +161,8 @@ const ContactSection = () => {
             <form onSubmit={handleConsultSubmit} className="space-y-5">
               {/* Name + Phone */}
               <div className="grid sm:grid-cols-2 gap-3">
-                <Input placeholder="Your Name" required />
-                <Input placeholder="Phone Number" required />
+                <Input placeholder="Your Name" required value={consultName} onChange={(e) => setConsultName(e.target.value)} />
+                <Input placeholder="Phone Number" required value={consultPhone} onChange={(e) => setConsultPhone(e.target.value)} />
               </div>
 
               {/* Date picker */}
