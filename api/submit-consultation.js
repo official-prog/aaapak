@@ -7,24 +7,22 @@ export default async function handler(req, res) {
   }
 
   const d = req.body || {};
+
   const params = new URLSearchParams({
-    firstName:          d.name  || "",
+    firstName:          String(d.name  || ""),
     lastName:           "CONSULTATION",
     email:              "",
-    phone:              d.phone || "",
+    phone:              String(d.phone || ""),
     company:            "",
     product:            "",
     quantity:           "",
-    timeFrame:          d.date  || "",
-    couponCode:         d.time  || "",
-    message:            "Consultation booked: " + (d.date || "") + " at " + (d.time || "") + " EST",
+    timeFrame:          String(d.date  || ""),
+    couponCode:         String(d.time  || ""),
+    message:            "Consultation: " + String(d.date || "") + " at " + String(d.time || "") + " EST",
     projectDescription: "",
   });
 
-  try {
-    await fetch(`${SCRIPT_URL}?${params.toString()}`, { redirect: "follow" });
-    res.status(200).json({ ok: true });
-  } catch (err) {
-    res.status(500).json({ error: err.message });
-  }
+  fetch(`${SCRIPT_URL}?${params.toString()}`, { redirect: "follow" }).catch(() => {});
+
+  return res.status(200).json({ ok: true });
 }

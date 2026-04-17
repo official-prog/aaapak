@@ -7,10 +7,11 @@ export default async function handler(req, res) {
   }
 
   const d = req.body || {};
+
   const params = new URLSearchParams({
     firstName:          "Newsletter",
     lastName:           "Signup",
-    email:              d.email || "",
+    email:              String(d.email || ""),
     phone:              "",
     company:            "",
     product:            "",
@@ -21,10 +22,7 @@ export default async function handler(req, res) {
     projectDescription: "",
   });
 
-  try {
-    await fetch(`${SCRIPT_URL}?${params.toString()}`, { redirect: "follow" });
-    res.status(200).json({ ok: true });
-  } catch (err) {
-    res.status(500).json({ error: err.message });
-  }
+  fetch(`${SCRIPT_URL}?${params.toString()}`, { redirect: "follow" }).catch(() => {});
+
+  return res.status(200).json({ ok: true });
 }

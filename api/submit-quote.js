@@ -7,24 +7,23 @@ export default async function handler(req, res) {
   }
 
   const d = req.body || {};
+
   const params = new URLSearchParams({
-    firstName:          d.firstName          || "",
-    lastName:           d.lastName           || "",
-    email:              d.email              || "",
-    phone:              d.phone              || "",
-    company:            d.company            || "",
-    product:            d.product            || "",
-    quantity:           d.quantity           || "",
-    timeFrame:          d.timeFrame          || "",
-    couponCode:         d.couponCode         || "",
-    message:            d.message            || "",
-    projectDescription: d.projectDescription || "",
+    firstName:          String(d.firstName          || ""),
+    lastName:           String(d.lastName           || ""),
+    email:              String(d.email              || ""),
+    phone:              String(d.phone              || ""),
+    company:            String(d.company            || ""),
+    product:            String(d.product            || ""),
+    quantity:           String(d.quantity           || ""),
+    timeFrame:          String(d.timeFrame          || ""),
+    couponCode:         String(d.couponCode         || ""),
+    message:            String(d.message            || ""),
+    projectDescription: String(d.projectDescription || ""),
   });
 
-  try {
-    await fetch(`${SCRIPT_URL}?${params.toString()}`, { redirect: "follow" });
-    res.status(200).json({ ok: true });
-  } catch (err) {
-    res.status(500).json({ error: err.message });
-  }
+  // Fire and forget — Apps Script takes 3-8 s; don't make the browser wait
+  fetch(`${SCRIPT_URL}?${params.toString()}`, { redirect: "follow" }).catch(() => {});
+
+  return res.status(200).json({ ok: true });
 }
