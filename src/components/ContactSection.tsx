@@ -53,7 +53,7 @@ const ContactSection = () => {
       projectDescription: g("projectDescription"),
     });
     await fetch(
-      "https://script.google.com/macros/s/AKfycbxUWgvBHfCUwCgJXq0YxMMcrzV9MwOrg5F532ltRaXPgaYJhqeIrjuJU3H5k8nPnXTR8w/exec",
+      "https://script.google.com/macros/s/AKfycbzRKU1fBIoX-yerA0i-_NG-HgGQtu8Sq9ofbZ5szq9awF3x8KaADKmU4BqI8AMmcais1w/exec",
       { method: "POST", mode: "no-cors", body: params }
     );
     setShowPopup(true);
