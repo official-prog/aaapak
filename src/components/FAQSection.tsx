@@ -79,10 +79,6 @@ const faqs: { q: string; a: ReactNode }[] = [
     a: "Yes, we provide fully customized inserts created by our experienced Structural Engineering Team to ensure a perfect fit for your packaging. For precise dimensions, you may send us a product sample or share a 3D CAD file for accurate fitting. Minimum order quantities apply for inserts ordered separately, but these can be adjusted when inserts are ordered together with boxes.",
   },
   {
-    q: "Is it possible to update details on an order I've already placed?",
-    a: "Yes, it is possible to update your order as long as it has not entered production. You may request changes by contacting your Product Specialist. Any updates to artwork or specifications must be completed before the final proof is approved. If production has already begun, certain adjustments may still be possible if requested immediately, although additional fees may apply for complex changes.",
-  },
-  {
     q: "Do you offer express or rush production services?",
     a: "Depending on our current production volume and scheduling, we may be able to fast-track your order. We recommend checking with a Product Specialist to see if expedited options are available at the time you order.",
   },

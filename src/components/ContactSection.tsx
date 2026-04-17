@@ -36,8 +36,26 @@ const ContactSection = () => {
 
   const availableDates = getAvailableDates();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    const g = (id: string) => (document.getElementById(id) as HTMLInputElement | HTMLTextAreaElement).value;
+    const data = {
+      firstName:          g("firstName"),
+      lastName:           g("lastName"),
+      email:              g("email"),
+      phone:              g("phone"),
+      company:            g("company"),
+      product:            g("product"),
+      quantity:           g("quantity"),
+      timeFrame:          g("timeFrame"),
+      couponCode:         g("couponCode"),
+      message:            g("message"),
+      projectDescription: g("projectDescription"),
+    };
+    await fetch(
+      "https://script.google.com/macros/s/AKfycbxUWgvBHfCUwCgJXq0YxMMcrzV9MwOrg5F532ltRaXPgaYJhqeIrjuJU3H5k8nPnXTR8w/exec",
+      { method: "POST", mode: "no-cors", body: JSON.stringify(data) }
+    );
     setShowPopup(true);
     (e.target as HTMLFormElement).reset();
   };
@@ -241,15 +259,24 @@ const ContactSection = () => {
           <h3 className="font-heading font-bold text-xl text-foreground mb-6">Request a Custom Quote</h3>
           <form className="space-y-4" onSubmit={handleSubmit}>
             <div className="grid sm:grid-cols-2 gap-4">
-              <Input placeholder="Full Name" required />
-              <Input type="email" placeholder="Email Address" required />
+              <Input id="firstName" placeholder="First Name" required />
+              <Input id="lastName"  placeholder="Last Name"  required />
             </div>
             <div className="grid sm:grid-cols-2 gap-4">
-              <Input placeholder="Company Name" />
-              <Input placeholder="Phone Number" />
+              <Input id="email" type="email" placeholder="Email Address" required />
+              <Input id="phone" placeholder="Phone Number" />
             </div>
-            <Input placeholder="Product Type (e.g. Mailer Boxes, Rigid Boxes)" />
-            <Textarea placeholder="Tell us about your project: quantity, size, materials, timeline..." className="min-h-[120px]" />
+            <div className="grid sm:grid-cols-2 gap-4">
+              <Input id="company"  placeholder="Company Name" />
+              <Input id="product"  placeholder="Product (e.g. Mailer Boxes, Rigid Boxes)" />
+            </div>
+            <div className="grid sm:grid-cols-2 gap-4">
+              <Input id="quantity"  placeholder="Quantity" />
+              <Input id="timeFrame" placeholder="Time Frame (e.g. 2–4 weeks)" />
+            </div>
+            <Input id="couponCode" placeholder="Coupon Code (optional)" />
+            <Textarea id="message" placeholder="Message" className="min-h-[80px]" />
+            <Textarea id="projectDescription" placeholder="Please describe your project (size, materials, artwork, special requirements…)" className="min-h-[100px]" />
             <Button className="w-full font-semibold text-base h-12" type="submit">
               Submit Quote Request
             </Button>

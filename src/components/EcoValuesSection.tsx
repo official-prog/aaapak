@@ -1,7 +1,7 @@
-import valEco from "@/assets/val-eco.png";
-import valInnovation from "@/assets/val-innovation.png";
-import valTailored from "@/assets/val-tailored.png";
-import valSupport from "@/assets/val-support.png";
+import valEco from "@/assets/eco-conscious-practices-1.jpg";
+import valInnovation from "@/assets/creative-innovation-2.jpg";
+import valTailored from "@/assets/tailored-solutions-3.jpg";
+import valSupport from "@/assets/dedicated-support-4.jpg";
 
 const values = [
   { image: valEco,        title: "Eco Commitment",    desc: "100% recyclable and biodegradable materials sourced responsibly from FSC-certified suppliers." },
@@ -26,11 +26,11 @@ const EcoValuesSection = () => (
             key={v.title}
             className="bg-card rounded-xl border border-border overflow-hidden hover:shadow-lg transition-shadow duration-300 group"
           >
-            <div className="h-44 overflow-hidden">
+            <div className="overflow-hidden">
               <img
                 src={v.image}
                 alt={v.title}
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                className="w-full h-auto group-hover:scale-105 transition-transform duration-500"
               />
             </div>
             <div className="p-6 text-center">
