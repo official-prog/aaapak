@@ -53,8 +53,8 @@ const ContactSection = () => {
       projectDescription: g("projectDescription"),
     });
     await fetch(
-      "https://script.google.com/macros/s/AKfycbzRKU1fBIoX-yerA0i-_NG-HgGQtu8Sq9ofbZ5szq9awF3x8KaADKmU4BqI8AMmcais1w/exec",
-      { method: "POST", mode: "no-cors", body: params }
+      "https://script.google.com/macros/s/AKfycbw_Gs0Bsx4tYFZtE5LkhYLRFcVSH5lK66fV4YUndk-Jc8Fi1yb49zq9-Lvp9lpZcy8oeA/exec?" + params.toString(),
+      { method: "GET", mode: "no-cors" }
     );
     setShowPopup(true);
     (e.target as HTMLFormElement).reset();
