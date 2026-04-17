@@ -52,10 +52,13 @@ const ContactSection = () => {
       message:            g("message"),
       projectDescription: g("projectDescription"),
     });
-    await fetch(
-      "https://script.google.com/macros/s/AKfycbw_Gs0Bsx4tYFZtE5LkhYLRFcVSH5lK66fV4YUndk-Jc8Fi1yb49zq9-Lvp9lpZcy8oeA/exec?" + params.toString(),
-      { method: "GET", mode: "no-cors" }
-    );
+    await new Promise<void>((resolve) => {
+      const img = new Image();
+      img.onload = img.onerror = () => resolve();
+      img.src =
+        "https://script.google.com/macros/s/AKfycbw_Gs0Bsx4tYFZtE5LkhYLRFcVSH5lK66fV4YUndk-Jc8Fi1yb49zq9-Lvp9lpZcy8oeA/exec?" +
+        params.toString();
+    });
     setShowPopup(true);
     (e.target as HTMLFormElement).reset();
   };
