@@ -63,18 +63,26 @@ const ContactSection = () => {
     (e.target as HTMLFormElement).reset();
   };
 
-  const handleConsultSubmit = (e: React.FormEvent) => {
+  const handleConsultSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    fetch("/api/submit-consultation", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        name:  consultName,
-        phone: consultPhone,
-        date:  selectedDate ? formatDate(selectedDate) : "",
-        time:  selectedTime ?? "",
-      }),
-    }).catch(() => {});
+    try {
+      const res = await fetch("/api/submit-consultation", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name:  consultName,
+          phone: consultPhone,
+          date:  selectedDate ? formatDate(selectedDate) : "",
+          time:  selectedTime ?? "",
+        }),
+      });
+      if (!res.ok) {
+        const err = await res.json().catch(() => ({}));
+        console.error("Consultation submit error:", err);
+      }
+    } catch (err) {
+      console.error("Consultation fetch error:", err);
+    }
     setConsultSubmitted(true);
   };
 
