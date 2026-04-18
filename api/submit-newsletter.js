@@ -22,7 +22,6 @@ export default async function handler(req, res) {
     projectDescription: "",
   });
 
-  fetch(`${SCRIPT_URL}?${params.toString()}`, { redirect: "follow" }).catch(() => {});
-
-  return res.status(200).json({ ok: true });
+  res.status(200).json({ ok: true });
+  await fetch(`${SCRIPT_URL}?${params.toString()}`, { redirect: "follow" }).catch(() => {});
 }
