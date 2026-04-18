@@ -16,6 +16,7 @@ const PRODUCTS = [
   "Paper Bags",
   "Pouches",
   "Reusable Bags",
+  "Restaurant",
 ];
 
 interface QuoteFormDialogProps {
