@@ -27,7 +27,7 @@ export default async function handler(req, res) {
 
   await resend.emails.send({
     from: "AAA PAK <onboarding@resend.dev>",
-    to:   "official@creatiks.org",
+    to:   "aslam@aaapak.com",
     subject: `Consultation Booked — ${d.name || "Unknown"} (${d.date || ""} @ ${d.time || ""})`,
     html: `
       <h2>New Consultation Booking</h2>

@@ -35,7 +35,7 @@ export default async function handler(req, res) {
 
   await resend.emails.send({
     from: "AAA PAK <onboarding@resend.dev>",
-    to:   "official@creatiks.org",
+    to:   "aslam@aaapak.com",
     subject: `New Quote Request — ${name} (${d.company || "No Company"})`,
     html: `
       <h2>New Quote Request</h2>

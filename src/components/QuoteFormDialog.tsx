@@ -8,16 +8,14 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { CheckCircle } from "lucide-react";
 
 const PRODUCTS = [
-  "Corrugated Boxes",
-  "Mailer Shipping Bag",
+  "Corrugated",
+  "Folding Carton",
   "Rigid Boxes",
-  "Reusable Shopping Bag",
-  "Pouches",
-  "Paper Bags",
-  "Folding Cartons",
   "Displays",
-  "Restaurants",
-  "Inserts",
+  "Mailer Bags",
+  "Paper Bags",
+  "Pouches",
+  "Reusable Bags",
 ];
 
 interface QuoteFormDialogProps {

@@ -25,7 +25,7 @@ const ServicesSection = () => (
     <div className="container">
       <div className="text-center max-w-2xl mx-auto mb-14">
         <span className="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-semibold mb-4 tracking-wide uppercase">
-          Our Services
+          Packaging Solutions
         </span>
         <h2 className="text-3xl md:text-4xl font-extrabold text-foreground">
           Your Best Solution for <span className="text-primary">Custom Packaging</span>

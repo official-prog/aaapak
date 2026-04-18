@@ -15,7 +15,7 @@ const ProcessSection = () => (
     <div className="container">
       <div className="text-center max-w-2xl mx-auto mb-14">
         <span className="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-semibold mb-4 tracking-wide uppercase">
-          How It Works
+          Services
         </span>
         <h2 className="text-3xl md:text-4xl font-extrabold text-foreground">Our Simple 4-Step Process</h2>
         <p className="mt-4 text-muted-foreground text-lg">From idea to delivery, we make custom packaging effortless.</p>
