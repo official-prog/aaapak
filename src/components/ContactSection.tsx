@@ -38,42 +38,14 @@ const ContactSection = () => {
 
   const availableDates = getAvailableDates();
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const g = (id: string) => (document.getElementById(id) as HTMLInputElement | HTMLTextAreaElement).value;
-    await fetch("/api/submit-quote", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        firstName:          g("firstName"),
-        lastName:           g("lastName"),
-        email:              g("email"),
-        phone:              g("phone"),
-        company:            g("company"),
-        product:            g("product"),
-        quantity:           g("quantity"),
-        timeFrame:          g("timeFrame"),
-        couponCode:         g("couponCode"),
-        message:            g("message"),
-        projectDescription: g("projectDescription"),
-      }),
-    });
     setShowPopup(true);
     (e.target as HTMLFormElement).reset();
   };
 
-  const handleConsultSubmit = async (e: React.FormEvent) => {
+  const handleConsultSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    await fetch("/api/submit-consultation", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        name:  consultName,
-        phone: consultPhone,
-        date:  selectedDate ? formatDate(selectedDate) : "",
-        time:  selectedTime ?? "",
-      }),
-    });
     setConsultSubmitted(true);
   };
 
