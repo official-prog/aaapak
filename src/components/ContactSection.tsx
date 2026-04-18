@@ -4,9 +4,6 @@ import { Textarea } from "@/components/ui/textarea";
 import { Phone, Mail, MapPin, CheckCircle, X, CalendarClock } from "lucide-react";
 import { useState } from "react";
 
-const APPS_SCRIPT_URL =
-  "https://script.google.com/macros/s/AKfycbwkCprIKYTWJ-AI2m-vCO1CW73fn7cvZbULlvw4vXbY-7U1hdC_K3_XDlfCdi1N_Fa3/exec";
-
 // Generate weekday dates for next 14 days
 const getAvailableDates = () => {
   const dates: Date[] = [];
@@ -45,12 +42,10 @@ const ContactSection = () => {
     e.preventDefault();
     const g = (id: string) =>
       (document.getElementById(id) as HTMLInputElement | HTMLTextAreaElement).value;
-    fetch(APPS_SCRIPT_URL, {
+    fetch("/api/submit-quote", {
       method: "POST",
-      mode: "no-cors",
-      headers: { "Content-Type": "text/plain" },
+      headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        _type:              "quote",
         firstName:          g("firstName"),
         lastName:           g("lastName"),
         email:              g("email"),
@@ -70,12 +65,10 @@ const ContactSection = () => {
 
   const handleConsultSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    fetch(APPS_SCRIPT_URL, {
+    fetch("/api/submit-consultation", {
       method: "POST",
-      mode: "no-cors",
-      headers: { "Content-Type": "text/plain" },
+      headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        _type: "consultation",
         name:  consultName,
         phone: consultPhone,
         date:  selectedDate ? formatDate(selectedDate) : "",
