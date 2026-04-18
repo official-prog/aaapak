@@ -1,12 +1,12 @@
 const SCRIPT_URL =
-  "https://script.google.com/macros/s/AKfycbyu0wK3yvcgwtbHZwsdY_ouG5o1kTiey6PYEzZnxSNGONvUZdQv2WXfIXPAC89AJKc/exec";
+  "https://script.google.com/macros/s/AKfycbwkCprIKYTWJ-AI2m-vCO1CW73fn7cvZbULlvw4vXbY-7U1hdC_K3_XDlfCdi1N_Fa3/exec";
 
 export default async function handler(req, res) {
   if (req.method !== "POST") return res.status(405).json({ error: "Method not allowed" });
   const d = req.body || {};
   const params = new URLSearchParams({
-    firstName:  String(d.name  || ""),
-    lastName:   "CONSULTATION",
+    type:       "Consultation",
+    name:       String(d.name  || ""),
     email:      "",
     phone:      String(d.phone || ""),
     company:    "",
@@ -14,7 +14,7 @@ export default async function handler(req, res) {
     quantity:   "",
     timeFrame:  String(d.date  || ""),
     couponCode: String(d.time  || ""),
-    message:    "Consultation: " + String(d.date || "") + " at " + String(d.time || "") + " EST",
+    message:    "Consultation booked: " + String(d.date || "") + " at " + String(d.time || "") + " EST",
     projectDescription: "",
   });
   fetch(`${SCRIPT_URL}?${params.toString()}`, { redirect: "follow" }).catch(() => {});
