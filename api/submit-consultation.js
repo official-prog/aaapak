@@ -1,5 +1,5 @@
 const SCRIPT_URL =
-  "https://script.google.com/macros/s/AKfycbw_Gs0Bsx4tYFZtE5LkhYLRFcVSH5lK66fV4YUndk-Jc8Fi1yb49zq9-Lvp9lpZcy8oeA/exec";
+  "https://script.google.com/macros/s/AKfycbyu0wK3yvcgwtbHZwsdY_ouG5o1kTiey6PYEzZnxSNGONvUZdQv2WXfIXPAC89AJKc/exec";
 
 export default async function handler(req, res) {
   if (req.method !== "POST") return res.status(405).json({ error: "Method not allowed" });
