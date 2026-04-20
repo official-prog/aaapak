@@ -25,6 +25,7 @@ const FeatureHighlightsSection = () => (
             <img
               src={featureHighlight}
               alt="AAA Pak packaging solutions"
+              loading="lazy"
               className="w-full h-56 object-cover"
             />
           </div>

@@ -37,9 +37,9 @@ const HeroSection = () => {
               Create Custom Boxes & Packaging of Your Dreams
             </h1>
             <div className="mt-4 mb-4">
-              <h2 className="text-xl md:text-2xl lg:text-3xl font-bold text-primary uppercase tracking-wide">
+              <p className="text-xl md:text-2xl lg:text-3xl font-bold text-primary uppercase tracking-wide">
                 ONE STOP PACKAGING SOLUTION
-              </h2>
+              </p>
             </div>
             <p className="mt-4 text-lg text-muted-foreground leading-relaxed max-w-md">
               Order personalized, high-quality custom printed packaging and branded boxes your customers will love, all in one place.

@@ -9,6 +9,7 @@ import foldingCarton from "@/assets/product-folding-carton.png";
 import display from "@/assets/product-display.png";
 import inserts from "@/assets/product-inserts.jpg";
 import restaurants from "@/assets/product-restaurants.png";
+import qualityTesting from "@/assets/product-quality-testing.jpg";
 
 const products = [
   { name: "Corrugated Boxes", description: "Durable custom shipping & storage solutions", image: corrugated },
@@ -21,6 +22,12 @@ const products = [
   { name: "Displays", description: "Point-of-sale display stands & packaging", image: display },
   { name: "Restaurants", description: "Custom packaging solutions for restaurants", image: restaurants },
   { name: "Inserts", description: "Custom box inserts for protection & presentation", image: inserts },
+  {
+    name: "Explore Our Full Catalog — Everything You Need, One Click Away",
+    description: "Explore our full product range, specs, and custom options on our website.",
+    image: qualityTesting,
+    href: "https://aaapak.com/all-products/",
+  },
 ];
 
 const ProductsSection = () => (
@@ -37,7 +44,7 @@ const ProductsSection = () => (
       </div>
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6">
         {products.map((p) => (
-          <ProductCard key={p.name} {...p} />
+          <ProductCard key={p.name} name={p.name} description={p.description} image={p.image} href={p.href} />
         ))}
       </div>
     </div>

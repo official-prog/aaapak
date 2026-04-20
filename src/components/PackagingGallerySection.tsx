@@ -22,26 +22,26 @@ const PackagingGallerySection = () => (
       {/* Row 1: hero wide + one card */}
       <div className="grid grid-cols-3 gap-4">
         <div className="col-span-2 h-72 rounded-2xl overflow-hidden relative group">
-          <img src={workHero} alt="AAA Pak warehouse" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+          <img src={workHero} alt="AAA Pak warehouse" loading="lazy" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
           <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent flex items-end p-6">
             <p className="text-white font-bold text-xl">Premium Custom Packaging</p>
           </div>
         </div>
         <div className="col-span-1 h-72 rounded-2xl overflow-hidden group">
-          <img src={workRound} alt="Premium round box" className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500" />
+          <img src={workRound} alt="Premium round box" loading="lazy" className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500" />
         </div>
       </div>
 
       {/* Row 2: 3 equal cards */}
       <div className="grid grid-cols-3 gap-4 mt-4">
         <div className="h-64 rounded-2xl overflow-hidden group">
-          <img src={workJewelry} alt="Jewelry packaging" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+          <img src={workJewelry} alt="Jewelry packaging" loading="lazy" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
         </div>
         <div className="h-64 rounded-2xl overflow-hidden group">
-          <img src={workElite} alt="Elite luxury box set" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+          <img src={workElite} alt="Elite luxury box set" loading="lazy" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
         </div>
         <div className="h-64 rounded-2xl overflow-hidden group">
-          <img src={workCollapsible} alt="Luxury collapsible box" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+          <img src={workCollapsible} alt="Luxury collapsible box" loading="lazy" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
         </div>
       </div>
 

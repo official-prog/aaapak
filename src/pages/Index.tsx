@@ -1,43 +1,55 @@
+import { lazy, Suspense } from "react";
+import SEO from "@/components/SEO";
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
-import KeywordsSection from "@/components/KeywordsSection";
-import ServicesSection from "@/components/ServicesSection";
+import TrustBar from "@/components/TrustBar";
 import ProductsSection from "@/components/ProductsSection";
-import EcoValuesSection from "@/components/EcoValuesSection";
-import ProcessSection from "@/components/ProcessSection";
-import BenefitsSection from "@/components/BenefitsSection";
-import FeatureHighlightsSection from "@/components/FeatureHighlightsSection";
-import TestimonialsSection from "@/components/TestimonialsSection";
-import IndustriesSection from "@/components/IndustriesSection";
-import PrintingSection from "@/components/PrintingSection";
-import PackagingGallerySection from "@/components/PackagingGallerySection";
-import PackagingShowcaseSection from "@/components/PackagingShowcaseSection";
-import FAQSection from "@/components/FAQSection";
-import ContactSection from "@/components/ContactSection";
-import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
+
+const ServicesSection = lazy(() => import("@/components/ServicesSection"));
+const ProcessSection = lazy(() => import("@/components/ProcessSection"));
+const BenefitsSection = lazy(() => import("@/components/BenefitsSection"));
+const CertificationsSection = lazy(() => import("@/components/CertificationsSection"));
+const StatsBarSection = lazy(() => import("@/components/StatsBarSection"));
+const TestimonialsSection = lazy(() => import("@/components/TestimonialsSection"));
+const IndustriesSection = lazy(() => import("@/components/IndustriesSection"));
+const PrintingSection = lazy(() => import("@/components/PrintingSection"));
+const MidCTAStrip = lazy(() => import("@/components/MidCTAStrip"));
+const PackagingShowcaseSection = lazy(() => import("@/components/PackagingShowcaseSection"));
+const FAQSection = lazy(() => import("@/components/FAQSection"));
+const ContactSection = lazy(() => import("@/components/ContactSection"));
+const Footer = lazy(() => import("@/components/Footer"));
 
 const Index = () => (
   <div className="min-h-screen">
+    <SEO
+      title="Custom Packaging Boxes | AAA PAK — USA & Canada"
+      description="AAA PAK offers premium custom packaging — corrugated boxes, mailer bags, rigid boxes, retail packaging & more. Free design support. Ships across USA & Canada."
+      canonical="https://www.aaapak.com/"
+    />
     <Header />
     <main>
       <HeroSection />
-      <KeywordsSection />
-      <FeatureHighlightsSection />
-      <ServicesSection />
+      <TrustBar />
       <ProductsSection />
-      <PackagingGallerySection />
-      <EcoValuesSection />
-      <ProcessSection />
-      <BenefitsSection />
-      <PackagingShowcaseSection />
-      <TestimonialsSection />
-      <IndustriesSection />
-      <PrintingSection />
-      <FAQSection />
-      <ContactSection />
+      <Suspense fallback={null}>
+        <ServicesSection />
+        <ProcessSection />
+        <BenefitsSection />
+        <CertificationsSection />
+        <StatsBarSection />
+        <TestimonialsSection />
+        <IndustriesSection />
+        <PrintingSection />
+        <MidCTAStrip />
+        <PackagingShowcaseSection />
+        <FAQSection />
+        <ContactSection />
+      </Suspense>
     </main>
-    <Footer />
+    <Suspense fallback={null}>
+      <Footer />
+    </Suspense>
     <WhatsAppButton />
   </div>
 );
