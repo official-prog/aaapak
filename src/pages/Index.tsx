@@ -1,10 +1,11 @@
-import { lazy, Suspense } from "react";
+import { lazy, Suspense, useState, useEffect } from "react";
 import SEO from "@/components/SEO";
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
 import ProductsSection from "@/components/ProductsSection";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import StickyQuoteCTA from "@/components/StickyQuoteCTA";
+import QuoteFormDialog from "@/components/QuoteFormDialog";
 
 const ServicesSection = lazy(() => import("@/components/ServicesSection"));
 const ProcessSection = lazy(() => import("@/components/ProcessSection"));
@@ -19,37 +20,53 @@ const FAQSection = lazy(() => import("@/components/FAQSection"));
 const ContactSection = lazy(() => import("@/components/ContactSection"));
 const Footer = lazy(() => import("@/components/Footer"));
 
-const Index = () => (
-  <div className="min-h-screen">
-    <SEO
-      title="Custom Packaging Boxes | AAA PAK — USA & Canada"
-      description="AAA PAK offers premium custom packaging — corrugated boxes, mailer bags, rigid boxes, retail packaging & more. Free design support. Ships across USA & Canada."
-      canonical="https://www.aaapak.com/"
-    />
-    <Header />
-    <main>
-      <HeroSection />
-      <ProductsSection />
+const POPUP_KEY = "aaapak_popup_shown";
+
+const Index = () => {
+  const [popupOpen, setPopupOpen] = useState(false);
+
+  useEffect(() => {
+    if (sessionStorage.getItem(POPUP_KEY)) return;
+    const timer = setTimeout(() => {
+      sessionStorage.setItem(POPUP_KEY, "1");
+      setPopupOpen(true);
+    }, 4000);
+    return () => clearTimeout(timer);
+  }, []);
+
+  return (
+    <div className="min-h-screen">
+      <SEO
+        title="Custom Packaging Boxes | AAA PAK — USA & Canada"
+        description="AAA PAK offers premium custom packaging — corrugated boxes, mailer bags, rigid boxes, retail packaging & more. Free design support. Ships across USA & Canada."
+        canonical="https://www.aaapak.com/"
+      />
+      <Header />
+      <main>
+        <HeroSection />
+        <ProductsSection />
+        <Suspense fallback={null}>
+          <ServicesSection />
+          <ProcessSection />
+          <BenefitsSection />
+          <CertificationsSection />
+          <StatsBarSection />
+          <TestimonialsSection />
+          <IndustriesSection />
+          <MidCTAStrip />
+          <PackagingShowcaseSection />
+          <FAQSection />
+          <ContactSection />
+        </Suspense>
+      </main>
       <Suspense fallback={null}>
-        <ServicesSection />
-        <ProcessSection />
-        <BenefitsSection />
-        <CertificationsSection />
-        <StatsBarSection />
-        <TestimonialsSection />
-        <IndustriesSection />
-        <MidCTAStrip />
-        <PackagingShowcaseSection />
-        <FAQSection />
-        <ContactSection />
+        <Footer />
       </Suspense>
-    </main>
-    <Suspense fallback={null}>
-      <Footer />
-    </Suspense>
-    <WhatsAppButton />
-    <StickyQuoteCTA />
-  </div>
-);
+      <WhatsAppButton />
+      <StickyQuoteCTA />
+      <QuoteFormDialog open={popupOpen} onOpenChange={setPopupOpen} productName="Custom Packaging" />
+    </div>
+  );
+};
 
 export default Index;
