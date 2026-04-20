@@ -6,6 +6,10 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import Index from "./pages/Index.tsx";
 import NotFound from "./pages/NotFound.tsx";
+import CustomPackagingUSA from "./pages/CustomPackagingUSA.tsx";
+import CustomPackagingCanada from "./pages/CustomPackagingCanada.tsx";
+import CorrugatedBoxes from "./pages/CorrugatedBoxes.tsx";
+import FoodPackaging from "./pages/FoodPackaging.tsx";
 
 const queryClient = new QueryClient();
 
@@ -18,6 +22,10 @@ const App = () => (
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Index />} />
+            <Route path="/custom-packaging-usa" element={<CustomPackagingUSA />} />
+            <Route path="/custom-packaging-canada" element={<CustomPackagingCanada />} />
+            <Route path="/corrugated-boxes" element={<CorrugatedBoxes />} />
+            <Route path="/food-packaging" element={<FoodPackaging />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>

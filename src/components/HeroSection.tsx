@@ -74,8 +74,12 @@ const HeroSection = () => {
                 Schedule a Consultation
               </Button>
             </div>
+            {/* Risk reversal micro-copy */}
+            <p className="mt-3 text-xs text-muted-foreground">
+              Free physical samples · No commitment · Quote delivered in 24 hours
+            </p>
             {/* Trust bar */}
-            <div className="mt-6 flex items-center gap-3 text-sm text-muted-foreground">
+            <div className="mt-5 flex items-center gap-3 text-sm text-muted-foreground">
               <div className="flex gap-0.5">
                 {Array.from({ length: 5 }).map((_, i) => (
                   <Star key={i} className="w-4 h-4 fill-primary text-primary" />

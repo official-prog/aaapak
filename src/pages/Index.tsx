@@ -4,6 +4,7 @@ import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
 import ProductsSection from "@/components/ProductsSection";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import StickyQuoteCTA from "@/components/StickyQuoteCTA";
 
 const ServicesSection = lazy(() => import("@/components/ServicesSection"));
 const ProcessSection = lazy(() => import("@/components/ProcessSection"));
@@ -47,6 +48,7 @@ const Index = () => (
       <Footer />
     </Suspense>
     <WhatsAppButton />
+    <StickyQuoteCTA />
   </div>
 );
 
