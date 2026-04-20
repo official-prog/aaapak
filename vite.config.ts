@@ -11,6 +11,9 @@ export default defineConfig(({ mode }) => ({
       overlay: false,
     },
   },
+  build: {
+    target: "es2019",
+  },
   plugins: [react()].filter(Boolean),
   resolve: {
     alias: {
