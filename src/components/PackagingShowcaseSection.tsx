@@ -50,6 +50,7 @@ const PackagingShowcaseSection = () => (
               <img
                 src={item.image}
                 alt={item.label}
+                loading="lazy"
                 className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
               />
             </div>
@@ -78,6 +79,7 @@ const PackagingShowcaseSection = () => (
                 <img
                   src={item.image}
                   alt={item.label}
+                  loading="lazy"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                 />
               </div>

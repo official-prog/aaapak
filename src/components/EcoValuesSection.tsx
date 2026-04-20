@@ -30,6 +30,7 @@ const EcoValuesSection = () => (
               <img
                 src={v.image}
                 alt={v.title}
+                loading="lazy"
                 className="w-full h-auto group-hover:scale-105 transition-transform duration-500"
               />
             </div>
