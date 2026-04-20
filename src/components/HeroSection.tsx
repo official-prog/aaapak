@@ -1,11 +1,13 @@
 import heroBanner from "@/assets/hero-banner.png";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Phone, Star } from "lucide-react";
+import { ArrowRight, CalendarClock, Star } from "lucide-react";
 import { useState } from "react";
 import QuoteFormDialog from "./QuoteFormDialog";
+import ConsultationDialog from "./ConsultationDialog";
 
 const HeroSection = () => {
-  const [quoteOpen, setQuoteOpen] = useState(false);
+  const [quoteOpen, setQuoteOpen]             = useState(false);
+  const [consultOpen, setConsultOpen]         = useState(false);
 
   const scrollToProducts = () => {
     const productsSection = document.getElementById('products');
@@ -31,29 +33,49 @@ const HeroSection = () => {
         <div className="relative container py-12 md:py-16">
           <div className="max-w-lg animate-fade-in-up">
             <span className="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-semibold mb-5 tracking-wide uppercase">
-              #1 Custom Packaging in North America
+              Factory-Direct · Low MOQ · USA & Canada
             </span>
-            <h1 className="text-4xl md:text-5xl lg:text-[56px] font-black leading-[1.1] text-foreground text-balance">
-              Create Custom Boxes & Packaging of Your Dreams
+            <h1 className="text-4xl md:text-5xl lg:text-[52px] font-black leading-[1.1] text-foreground text-balance">
+              Save 20–30% on Custom Packaging with Low MOQs & End-to-End Support
             </h1>
-            <div className="mt-4 mb-4">
-              <p className="text-xl md:text-2xl lg:text-3xl font-bold text-primary uppercase tracking-wide">
-                ONE STOP PACKAGING SOLUTION
-              </p>
-            </div>
-            <p className="mt-4 text-lg text-muted-foreground leading-relaxed max-w-md">
-              Order personalized, high-quality custom printed packaging and branded boxes your customers will love, all in one place.
-            </p>
+            <ul className="mt-5 space-y-2">
+              {[
+                "Free sampling before you commit",
+                "Fast turnaround — 10–15 business days",
+                "Delivered across USA & Canada",
+              ].map((point) => (
+                <li key={point} className="flex items-center gap-2.5 text-base text-muted-foreground">
+                  <span className="w-5 h-5 rounded-full bg-primary/15 flex items-center justify-center shrink-0">
+                    <svg className="w-3 h-3 text-primary" viewBox="0 0 12 12" fill="none">
+                      <path d="M2 6l3 3 5-5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  </span>
+                  {point}
+                </li>
+              ))}
+            </ul>
             <div className="mt-8 flex flex-wrap gap-4">
               <Button size="lg" className="font-semibold text-base px-8" onClick={() => setQuoteOpen(true)}>
-                Request a Quote <ArrowRight className="ml-2 w-4 h-4" />
+                Get Free Quote in 24 Hours <ArrowRight className="ml-2 w-4 h-4" />
               </Button>
               <Button size="lg" variant="outline" className="font-semibold text-base bg-white/60 backdrop-blur-sm" onClick={scrollToProducts}>
                 Browse Products
               </Button>
             </div>
+            {/* Schedule CTA */}
+            <div className="mt-5">
+              <Button
+                size="lg"
+                variant="outline"
+                className="font-semibold text-base bg-white/60 backdrop-blur-sm"
+                onClick={() => setConsultOpen(true)}
+              >
+                <CalendarClock className="mr-2 w-4 h-4" />
+                Schedule a Consultation
+              </Button>
+            </div>
             {/* Trust bar */}
-            <div className="mt-8 flex items-center gap-3 text-sm text-muted-foreground">
+            <div className="mt-6 flex items-center gap-3 text-sm text-muted-foreground">
               <div className="flex gap-0.5">
                 {Array.from({ length: 5 }).map((_, i) => (
                   <Star key={i} className="w-4 h-4 fill-primary text-primary" />
@@ -62,25 +84,11 @@ const HeroSection = () => {
               <span className="font-semibold text-foreground">4.8/5</span>
               <span>from 300+ brands across USA & Canada</span>
             </div>
-            {/* Phone CTA */}
-            <div className="mt-5">
-              <a
-                href="tel:18882288165"
-                className="inline-flex items-center gap-3 px-5 py-3 rounded-xl bg-white/70 backdrop-blur-sm border border-primary/20 hover:bg-white/90 hover:border-primary/40 transition-all group"
-              >
-                <span className="flex items-center justify-center w-9 h-9 rounded-full bg-primary/10 group-hover:bg-primary/20 transition-colors">
-                  <Phone className="w-4 h-4 text-primary" />
-                </span>
-                <span>
-                  <span className="block text-base font-bold text-foreground tracking-wide">1888 228 8165</span>
-                  <span className="block text-xs text-muted-foreground">Consult with our Experts · 9:30am – 5:00pm EST</span>
-                </span>
-              </a>
-            </div>
           </div>
         </div>
       </section>
       <QuoteFormDialog open={quoteOpen} onOpenChange={setQuoteOpen} productName="Custom Packaging" />
+      <ConsultationDialog open={consultOpen} onOpenChange={setConsultOpen} />
     </>
   );
 };
