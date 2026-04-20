@@ -6,9 +6,10 @@ interface ProductCardProps {
   name: string;
   description: string;
   image: string;
+  href?: string;
 }
 
-const ProductCard = ({ name, description, image }: ProductCardProps) => {
+const ProductCard = ({ name, description, image, href }: ProductCardProps) => {
   const [open, setOpen] = useState(false);
 
   return (
@@ -27,16 +28,24 @@ const ProductCard = ({ name, description, image }: ProductCardProps) => {
         <div className="p-5 flex flex-col flex-1">
           <h3 className="font-heading font-bold text-foreground">{name}</h3>
           <p className="mt-1 text-sm text-muted-foreground flex-1">{description}</p>
-          <Button
-            onClick={() => setOpen(true)}
-            className="mt-3 w-full font-semibold"
-            size="sm"
-          >
-            Get a Quote
-          </Button>
+          {href ? (
+            <Button asChild className="mt-3 w-full font-semibold" size="sm">
+              <a href={href} target="_blank" rel="noopener noreferrer">
+                Visit Website
+              </a>
+            </Button>
+          ) : (
+            <Button
+              onClick={() => setOpen(true)}
+              className="mt-3 w-full font-semibold"
+              size="sm"
+            >
+              Get a Quote
+            </Button>
+          )}
         </div>
       </div>
-      <QuoteFormDialog open={open} onOpenChange={setOpen} productName={name} />
+      {!href && <QuoteFormDialog open={open} onOpenChange={setOpen} productName={name} />}
     </>
   );
 };
