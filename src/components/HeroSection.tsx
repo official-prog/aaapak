@@ -1,6 +1,6 @@
 import heroBanner from "@/assets/hero-banner.png";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Star } from "lucide-react";
+import { ArrowRight, Phone, Star } from "lucide-react";
 import { useState } from "react";
 import QuoteFormDialog from "./QuoteFormDialog";
 
@@ -16,7 +16,7 @@ const HeroSection = () => {
 
   return (
     <>
-      <section className="relative overflow-hidden min-h-[520px] md:min-h-[600px] flex items-center">
+      <section className="relative overflow-hidden min-h-[620px] md:min-h-[700px] flex items-center">
         {/* Banner as full background */}
         <img
           src={heroBanner}
@@ -28,7 +28,7 @@ const HeroSection = () => {
         <div className="absolute inset-0" style={{ background: 'linear-gradient(to right, rgba(253,240,220,0.97) 0%, rgba(253,240,220,0.92) 35%, rgba(253,240,220,0.5) 60%, transparent 80%)' }} />
 
         {/* Text content - left side */}
-        <div className="relative container py-16 md:py-24">
+        <div className="relative container py-12 md:py-16">
           <div className="max-w-lg animate-fade-in-up">
             <span className="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-semibold mb-5 tracking-wide uppercase">
               #1 Custom Packaging in North America
@@ -61,6 +61,21 @@ const HeroSection = () => {
               </div>
               <span className="font-semibold text-foreground">4.8/5</span>
               <span>from 300+ brands across USA & Canada</span>
+            </div>
+            {/* Phone CTA */}
+            <div className="mt-5">
+              <a
+                href="tel:18882288165"
+                className="inline-flex items-center gap-3 px-5 py-3 rounded-xl bg-white/70 backdrop-blur-sm border border-primary/20 hover:bg-white/90 hover:border-primary/40 transition-all group"
+              >
+                <span className="flex items-center justify-center w-9 h-9 rounded-full bg-primary/10 group-hover:bg-primary/20 transition-colors">
+                  <Phone className="w-4 h-4 text-primary" />
+                </span>
+                <span>
+                  <span className="block text-base font-bold text-foreground tracking-wide">1888 228 8165</span>
+                  <span className="block text-xs text-muted-foreground">Consult with our Experts · 9:30am – 5:00pm EST</span>
+                </span>
+              </a>
             </div>
           </div>
         </div>

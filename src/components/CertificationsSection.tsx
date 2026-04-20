@@ -4,62 +4,60 @@ const certifications = [
   {
     icon: Award,
     title: "FSC Certified",
-    desc: "Forest Stewardship Council chain-of-custody certified for responsibly sourced materials.",
+    desc: "Responsibly sourced materials with full chain-of-custody.",
   },
   {
     icon: Leaf,
-    title: "Biodegradable Materials",
-    desc: "100% biodegradable and compostable packaging options available across all product lines.",
+    title: "Biodegradable",
+    desc: "100% biodegradable & compostable options across all product lines.",
   },
   {
     icon: Recycle,
     title: "100% Recyclable",
-    desc: "All packaging materials are fully recyclable, supporting circular economy standards.",
+    desc: "Fully recyclable materials supporting circular economy standards.",
   },
   {
     icon: ShieldCheck,
-    title: "ISO 9001 Quality",
-    desc: "ISO 9001 quality management standards applied to every production run.",
+    title: "ISO 9001",
+    desc: "Quality management standards applied to every production run.",
   },
   {
     icon: Globe,
     title: "ASTM Compliant",
-    desc: "ASTM D6400 certified compostable materials for food-grade and retail packaging.",
+    desc: "ASTM D6400 certified compostable materials for food-grade packaging.",
   },
   {
     icon: BadgeCheck,
     title: "SGS Inspected",
-    desc: "Third-party SGS quality inspections ensure every batch meets international standards.",
+    desc: "Third-party inspections ensure every batch meets global standards.",
   },
 ];
 
 const CertificationsSection = () => (
-  <section className="py-20 md:py-28 bg-background">
+  <section className="py-20 md:py-28 bg-foreground text-background">
     <div className="container">
       <div className="text-center max-w-2xl mx-auto mb-14">
-        <span className="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-semibold mb-4 tracking-wide uppercase">
+        <span className="inline-block px-3 py-1 rounded-full bg-primary/20 text-primary text-xs font-semibold mb-4 tracking-wide uppercase">
           Certifications
         </span>
-        <h2 className="text-3xl md:text-4xl font-extrabold text-foreground">
+        <h2 className="text-3xl md:text-4xl font-extrabold text-background">
           Built to <span className="text-primary">Industry Standards</span>
         </h2>
-        <p className="mt-4 text-muted-foreground text-lg">
+        <p className="mt-4 text-background/60 text-lg">
           Every product we ship meets rigorous international quality and sustainability certifications.
         </p>
       </div>
-      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-2 md:grid-cols-3 gap-px bg-background/10 rounded-2xl overflow-hidden border border-background/10">
         {certifications.map((c) => (
           <div
             key={c.title}
-            className="flex gap-4 bg-card rounded-xl border border-border p-6 hover:shadow-md transition-shadow duration-300"
+            className="flex flex-col items-center text-center gap-3 bg-foreground p-8 hover:bg-background/5 transition-colors duration-300"
           >
-            <div className="w-12 h-12 shrink-0 rounded-lg bg-primary/10 flex items-center justify-center">
-              <c.icon className="w-5 h-5 text-primary" />
+            <div className="w-14 h-14 rounded-full border border-primary/40 bg-primary/10 flex items-center justify-center mb-1">
+              <c.icon className="w-6 h-6 text-primary" />
             </div>
-            <div>
-              <h3 className="font-heading font-bold text-foreground mb-1">{c.title}</h3>
-              <p className="text-sm text-muted-foreground">{c.desc}</p>
-            </div>
+            <h3 className="font-bold text-background text-base">{c.title}</h3>
+            <p className="text-sm text-background/50 leading-relaxed">{c.desc}</p>
           </div>
         ))}
       </div>

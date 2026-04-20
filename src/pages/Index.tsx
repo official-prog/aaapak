@@ -2,7 +2,6 @@ import { lazy, Suspense } from "react";
 import SEO from "@/components/SEO";
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
-import TrustBar from "@/components/TrustBar";
 import ProductsSection from "@/components/ProductsSection";
 import WhatsAppButton from "@/components/WhatsAppButton";
 
@@ -13,7 +12,6 @@ const CertificationsSection = lazy(() => import("@/components/CertificationsSect
 const StatsBarSection = lazy(() => import("@/components/StatsBarSection"));
 const TestimonialsSection = lazy(() => import("@/components/TestimonialsSection"));
 const IndustriesSection = lazy(() => import("@/components/IndustriesSection"));
-const PrintingSection = lazy(() => import("@/components/PrintingSection"));
 const MidCTAStrip = lazy(() => import("@/components/MidCTAStrip"));
 const PackagingShowcaseSection = lazy(() => import("@/components/PackagingShowcaseSection"));
 const FAQSection = lazy(() => import("@/components/FAQSection"));
@@ -30,7 +28,6 @@ const Index = () => (
     <Header />
     <main>
       <HeroSection />
-      <TrustBar />
       <ProductsSection />
       <Suspense fallback={null}>
         <ServicesSection />
@@ -40,7 +37,6 @@ const Index = () => (
         <StatsBarSection />
         <TestimonialsSection />
         <IndustriesSection />
-        <PrintingSection />
         <MidCTAStrip />
         <PackagingShowcaseSection />
         <FAQSection />
