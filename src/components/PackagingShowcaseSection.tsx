@@ -1,98 +1,104 @@
-import galleryShipping from "@/assets/gallery-shipping.png";
-import galleryPouches from "@/assets/gallery-pouches.png";
-import galleryInsert2 from "@/assets/gallery-insert2.png";
-import indPouches from "@/assets/ind-pouches.png";
-import benefitsImg from "@/assets/benefits-img.png";
-import restaurantClearCup from "@/assets/restaurant-clear-cup.jpg";
-import restaurantPaperBowl from "@/assets/restaurant-paper-bowl.jpg";
-import restaurantPaperCup from "@/assets/restaurant-paper-cup.jpg";
-import restaurantPaperFoodBag from "@/assets/restaurant-paper-food-bag.jpg";
-import restaurantPaperFoodBox from "@/assets/restaurant-paper-food-box.jpg";
+import { useState } from "react";
+import { ArrowRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import QuoteFormDialog from "./QuoteFormDialog";
+import benefitsImg      from "@/assets/benefits-img.png";
+import galleryShipping  from "@/assets/gallery-shipping.png";
+import galleryPouches   from "@/assets/gallery-pouches.png";
+import galleryInsert2   from "@/assets/gallery-insert2.png";
 
 const items = [
-  { image: benefitsImg,           label: "Mailer Bags",                    desc: "Gold & metallic bubble mailers" },
-  { image: galleryShipping,       label: "Shipping Bags",                  desc: "Durable poly mailer solutions" },
-  { image: galleryPouches,        label: "Stand-Up Pouches",               desc: "Custom printed flexible pouches" },
-  { image: indPouches,            label: "Liquid Spout Dispensing Pouch",  desc: "High-barrier packaging for food & cosmetics" },
-  { image: galleryInsert2,        label: "Box Inserts",                    desc: "Precision-cut cardboard inserts" },
+  {
+    image:   benefitsImg,
+    label:   "Custom Mailer Bags",
+    context: "1,200 units · Cosmetics brand, Los Angeles",
+    product: "Mailer Bags",
+  },
+  {
+    image:   galleryShipping,
+    label:   "Poly Shipping Bags",
+    context: "800 units · E-commerce brand, New York",
+    product: "Mailer Bags",
+  },
+  {
+    image:   galleryPouches,
+    label:   "Stand-Up Pouches",
+    context: "600 units · Food brand, Chicago",
+    product: "Pouches",
+  },
+  {
+    image:   galleryInsert2,
+    label:   "Custom Box Inserts",
+    context: "500 units · Retail brand, Toronto",
+    product: "Rigid Boxes",
+  },
 ];
 
-const restaurantItems = [
-  { image: restaurantClearCup,     label: "Clear Cup",       desc: "Transparent cups for cold beverages" },
-  { image: restaurantPaperBowl,    label: "Paper Bowl",      desc: "Eco-friendly bowls for hot & cold food" },
-  { image: restaurantPaperCup,     label: "Paper Cup",       desc: "Custom printed paper cups" },
-  { image: restaurantPaperFoodBag, label: "Paper Food Bag",  desc: "Branded bags for takeaway orders" },
-  { image: restaurantPaperFoodBox, label: "Paper Food Box",  desc: "Sturdy boxes for meals on the go" },
-];
+const PackagingShowcaseSection = () => {
+  const [open, setOpen] = useState(false);
+  const [product, setProduct] = useState("Custom Packaging");
 
-const PackagingShowcaseSection = () => (
-  <section className="py-20 md:py-28 bg-card overflow-hidden">
-    <div className="container">
-      <div className="text-center max-w-2xl mx-auto mb-14">
-        <span className="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-semibold mb-4 tracking-wide uppercase">
-          Showcase
-        </span>
-        <h2 className="text-3xl md:text-4xl font-extrabold text-foreground">
-          Crafted for <span className="text-primary">Every Need</span>
-        </h2>
-        <p className="mt-4 text-muted-foreground text-lg">
-          From flexible pouches to protective inserts, we make it all.
-        </p>
-      </div>
+  const openQuote = (p: string) => {
+    setProduct(p);
+    setOpen(true);
+  };
 
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
-        {items.map((item) => (
-          <div
-            key={item.label}
-            className="group relative rounded-2xl overflow-hidden bg-secondary border border-border hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
-          >
-            <div className="h-52 overflow-hidden">
-              <img
-                src={item.image}
-                alt={item.label}
-                loading="lazy"
-                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-              />
-            </div>
-            <div className="p-4">
-              <h3 className="font-bold text-foreground text-sm">{item.label}</h3>
-              <p className="text-xs text-muted-foreground mt-1">{item.desc}</p>
-            </div>
+  return (
+    <>
+      <section className="py-20 md:py-28 bg-secondary">
+        <div className="container">
+
+          <div className="text-center max-w-2xl mx-auto mb-14">
+            <span className="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-semibold mb-4 tracking-wide uppercase">
+              Our Work
+            </span>
+            <h2 className="text-3xl md:text-4xl font-extrabold text-foreground">
+              What We've Built for{" "}
+              <span className="text-primary">Brands Like Yours</span>
+            </h2>
+            <p className="mt-4 text-muted-foreground text-lg">
+              Real orders. Real brands. Factory-direct quality you can see.
+            </p>
           </div>
-        ))}
-      </div>
 
-      <div className="mt-6">
-        <div className="flex items-center gap-3 mb-4">
-          <span className="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-semibold tracking-wide uppercase">
-            Restaurant
-          </span>
-          <div className="flex-1 h-px bg-border" />
-        </div>
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
-          {restaurantItems.map((item) => (
-            <div
-              key={item.label}
-              className="group relative rounded-2xl overflow-hidden bg-secondary border border-border hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
-            >
-              <div className="h-52 overflow-hidden">
-                <img
-                  src={item.image}
-                  alt={item.label}
-                  loading="lazy"
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                />
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-3xl mx-auto">
+            {items.map((item) => (
+              <div
+                key={item.label}
+                className="bg-card rounded-2xl border border-border overflow-hidden flex flex-col"
+              >
+                <div className="h-56 overflow-hidden">
+                  <img
+                    src={item.image}
+                    alt={item.label}
+                    loading="lazy"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="p-5 flex flex-col gap-3">
+                  <div>
+                    <p className="font-bold text-foreground text-sm">{item.label}</p>
+                    <p className="text-[12px] text-muted-foreground mt-0.5">{item.context}</p>
+                  </div>
+                  <Button
+                    size="sm"
+                    variant="outline"
+                    className="w-full font-semibold"
+                    onClick={() => openQuote(item.product)}
+                  >
+                    Get a Quote for This <ArrowRight className="ml-2 w-3.5 h-3.5" />
+                  </Button>
+                </div>
               </div>
-              <div className="p-4">
-                <h3 className="font-bold text-foreground text-sm">{item.label}</h3>
-                <p className="text-xs text-muted-foreground mt-1">{item.desc}</p>
-              </div>
-            </div>
-          ))}
+            ))}
+          </div>
+
         </div>
-      </div>
-    </div>
-  </section>
-);
+      </section>
+
+      <QuoteFormDialog open={open} onOpenChange={setOpen} productName={product} />
+    </>
+  );
+};
 
 export default PackagingShowcaseSection;
