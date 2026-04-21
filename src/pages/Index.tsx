@@ -4,7 +4,6 @@ import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
 import ProductsSection from "@/components/ProductsSection";
 import WhatsAppButton from "@/components/WhatsAppButton";
-import StickyQuoteCTA from "@/components/StickyQuoteCTA";
 import QuoteFormDialog from "@/components/QuoteFormDialog";
 
 const ComparisonSection = lazy(() => import("@/components/ComparisonSection"));
@@ -73,7 +72,6 @@ const Index = () => {
         <Footer />
       </Suspense>
       <WhatsAppButton />
-      <StickyQuoteCTA />
       <QuoteFormDialog open={popupOpen} onOpenChange={setPopupOpen} productName="Custom Packaging" />
     </div>
   );
