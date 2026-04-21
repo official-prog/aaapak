@@ -41,13 +41,13 @@ const HeroSection = () => {
               Delivered in 15 Days.
             </h1>
             <p className="mt-5 text-lg text-muted-foreground max-w-md">
-              300+ USA & Canada brands ditched their broker and switched to AAA Pak. Same quality. Factory cost. One team handles everything — design to delivery.
+              One team. One contact. Everything from design to delivery — without the broker taking 30% off the top.
             </p>
             <ul className="mt-5 space-y-2">
               {[
-                "You pay factory price — not agency markup",
-                "3D design mockup delivered in 48 hours",
-                "From 50 units — no large volume lock-in",
+                "3D design mockup ready in 48 hours",
+                "From 50 units — scale up as you grow",
+                "10–15 business day delivery, USA & Canada",
               ].map((point) => (
                 <li key={point} className="flex items-center gap-2.5 text-base text-muted-foreground">
                   <span className="w-5 h-5 rounded-full bg-primary/15 flex items-center justify-center shrink-0">
@@ -79,10 +79,6 @@ const HeroSection = () => {
                 Schedule a Consultation
               </Button>
             </div>
-            {/* Risk reversal micro-copy */}
-            <p className="mt-3 text-xs text-muted-foreground">
-              3D design mockup · No commitment · Quote delivered in 24 hours
-            </p>
             {/* Trust bar */}
             <div className="mt-5 flex items-center gap-3 text-sm text-muted-foreground">
               <div className="flex gap-0.5">

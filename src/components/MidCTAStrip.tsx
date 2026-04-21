@@ -5,10 +5,10 @@ import QuoteFormDialog from "./QuoteFormDialog";
 import ConsultationDialog from "./ConsultationDialog";
 
 const guarantees = [
-  { icon: <CheckCircle className="w-4 h-4" />, text: "3D Design Mockup" },
-  { icon: <Shield className="w-4 h-4" />, text: "No Commitment Required" },
-  { icon: <Clock className="w-4 h-4" />, text: "Quote in 24 Hours" },
-  { icon: <CheckCircle className="w-4 h-4" />, text: "Guaranteed Cost Savings" },
+  { icon: <CheckCircle className="w-4 h-4" />, text: "3D Mockup in 48h" },
+  { icon: <Shield className="w-4 h-4" />, text: "No Obligation" },
+  { icon: <Clock className="w-4 h-4" />, text: "Reply in 24 Hours" },
+  { icon: <CheckCircle className="w-4 h-4" />, text: "All-In Pricing — No Hidden Fees" },
 ];
 
 const MidCTAStrip = () => {
@@ -27,15 +27,14 @@ const MidCTAStrip = () => {
         <div className="container text-center relative">
           {/* Urgency pill */}
           <span className="inline-block px-4 py-1.5 rounded-full bg-white/15 text-white text-xs font-semibold mb-5 tracking-wide uppercase">
-            Join 300+ Brands — Free Quote Today
+            Trusted by 300+ Brands Across USA & Canada
           </span>
 
           <h2 className="text-3xl md:text-4xl font-black text-white mb-4 max-w-2xl mx-auto">
-            Get Your Custom Quote in 24 Hours —{" "}
-            <span className="underline decoration-white/40">No Commitment Required</span>
+            Ready to Cut Your Packaging Bill by 30%?
           </h2>
           <p className="text-white/80 text-lg mb-8 max-w-xl mx-auto leading-relaxed">
-            3D design mockup in 48 hours. Guaranteed 20–30% savings vs. local suppliers — or we'll match any verified quote.
+            Tell us what you need — we'll send a detailed quote and 3D mockup within 24–48 hours. No obligation.
           </p>
 
           {/* CTA buttons */}
@@ -46,7 +45,7 @@ const MidCTAStrip = () => {
               className="font-semibold text-base px-8"
               onClick={() => setQuoteOpen(true)}
             >
-              Get Free Quote in 24 Hours <ArrowRight className="ml-2 w-4 h-4" />
+              Start My Quote Now <ArrowRight className="ml-2 w-4 h-4" />
             </Button>
             <Button
               size="lg"

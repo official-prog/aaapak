@@ -7,8 +7,8 @@ const reasons = [
   {
     stat: "30%",
     statSub: "lower cost",
-    title: "30% Lower Cost Than Local Suppliers",
-    desc: "We work directly with certified factories — zero broker markup. You keep the margin your current supplier is taking.",
+    title: "Keep the Margin Your Broker Was Taking",
+    desc: "We work directly with certified factories — you pay manufacturing cost, not an agency's 30–40% markup on top.",
   },
   {
     stat: "50",
@@ -71,10 +71,11 @@ const BenefitsSection = () => {
             {/* Left: content */}
             <div>
               <h3 className="text-2xl md:text-3xl font-extrabold text-foreground leading-tight">
-                One Supplier for the Entire Process — Design to Delivery
+                Stop Coordinating Four Vendors.<br />
+                <span className="text-primary">We Handle All of It.</span>
               </h3>
               <p className="mt-4 text-muted-foreground text-lg max-w-md">
-                No juggling a designer, a manufacturer, a freight broker, and a customs agent. We handle it all — and you get one point of contact who knows your brand.
+                One quote. One contact. One delivery. Your dedicated account manager knows your brand specs, your deadlines, and your budget — from the first call to the last shipment.
               </p>
 
               <button
