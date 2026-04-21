@@ -89,8 +89,16 @@ const IndustriesSection = () => {
     return () => { if (rafRef.current) cancelAnimationFrame(rafRef.current); };
   }, []);
 
-  const scrollLeft  = () => scrollRef.current?.scrollBy({ left: -SCROLL_AMOUNT, behavior: "smooth" });
-  const scrollRight = () => scrollRef.current?.scrollBy({ left:  SCROLL_AMOUNT, behavior: "smooth" });
+  const scrollLeft = () => {
+    isPaused.current = true;
+    scrollRef.current?.scrollBy({ left: -SCROLL_AMOUNT, behavior: "smooth" });
+    setTimeout(() => { isPaused.current = false; }, 800);
+  };
+  const scrollRight = () => {
+    isPaused.current = true;
+    scrollRef.current?.scrollBy({ left: SCROLL_AMOUNT, behavior: "smooth" });
+    setTimeout(() => { isPaused.current = false; }, 800);
+  };
 
   const onMouseDown = (e: React.MouseEvent) => {
     isDragging.current = true;
