@@ -17,7 +17,7 @@ const stats = [
 
 const boxStyles = [
   {
-    name: "RSC — Regular Slotted Container",
+    name: "RSC, Regular Slotted Container",
     desc: "The industry standard. Four equal-length flaps fold to form top and bottom. Best for general shipping and storage. Cost-effective for high volumes.",
     uses: "E-commerce, retail distribution, wholesale",
   },
@@ -28,7 +28,7 @@ const boxStyles = [
   },
   {
     name: "Mailer Boxes (Tuck-Top)",
-    desc: "Self-locking tuck-top design — no tape required. Custom printed inside and outside. The go-to for DTC e-commerce brands.",
+    desc: "Self-locking tuck-top design, no tape required. Custom printed inside and outside. The go-to for DTC e-commerce brands.",
     uses: "DTC e-commerce, subscription boxes, gift packaging",
   },
   {
@@ -117,7 +117,7 @@ const faqs = [
   },
   {
     q: "What is ECT (Edge Crush Test) and do I need to specify it?",
-    a: "ECT measures stacking strength — how much vertical load a corrugated box can handle before crushing. Common specs are 32 ECT (general shipping), 44 ECT (heavier loads), and 51 ECT (heavy industrial). We'll recommend the right spec based on your product weight and shipping stack height.",
+    a: "ECT measures stacking strength, how much vertical load a corrugated box can handle before crushing. Common specs are 32 ECT (general shipping), 44 ECT (heavier loads), and 51 ECT (heavy industrial). We'll recommend the right spec based on your product weight and shipping stack height.",
   },
 ];
 
@@ -159,11 +159,11 @@ const CorrugatedBoxes = () => {
               All Styles · All Flutes · USA & Canada
             </span>
             <h1 className="text-4xl md:text-5xl font-black leading-tight text-foreground mb-6">
-              Custom Corrugated Boxes —{" "}
+              Custom Corrugated Boxes" }" "}
               <span className="text-primary">Wholesale Pricing from 50 Units</span>
             </h1>
             <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Factory-direct corrugated packaging for e-commerce, retail, and industrial brands. RSC, die-cut, mailer boxes, and custom inserts — any flute, any print, any size.
+              Factory-direct corrugated packaging for e-commerce, retail, and industrial brands. RSC, die-cut, mailer boxes, and custom inserts, any flute, any print, any size.
             </p>
             <ul className="flex flex-col sm:flex-row gap-3 justify-center mb-10">
               {[
@@ -293,7 +293,7 @@ const CorrugatedBoxes = () => {
               ))}
             </div>
             <blockquote className="text-white text-xl md:text-2xl font-semibold leading-relaxed mb-8">
-              "Switched to AAA Pak's corrugated line after two bad suppliers. Product damage dropped 40% in 3 months. Their structural engineers actually solved our insert problem — something nobody else bothered to do."
+              "Switched to AAA Pak's corrugated line after two bad suppliers. Product damage dropped 40% in 3 months. Their structural engineers actually solved our insert problem, something nobody else bothered to do."
             </blockquote>
             <div className="flex items-center gap-3 justify-center">
               <div className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center text-white font-extrabold text-sm">
@@ -315,7 +315,7 @@ const CorrugatedBoxes = () => {
         <section className="py-20 bg-background">
           <div className="container max-w-3xl mx-auto">
             <h2 className="text-3xl font-extrabold text-foreground text-center mb-12">
-              Custom Corrugated Boxes — FAQ
+              Custom Corrugated Boxes, FAQ
             </h2>
             <div className="space-y-6">
               {faqs.map((f) => (

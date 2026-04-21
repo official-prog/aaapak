@@ -6,9 +6,9 @@ import { ArrowRight } from "lucide-react";
 const rows = [
   {
     label: "Pricing model",
-    aaa: "Factory-direct — you pay cost price",
+    aaa: "Factory-direct, you pay cost price",
     broker: "Agency markup (+25–40%)",
-    overseas: "Unpredictable — duties, delays, risk",
+    overseas: "Unpredictable, duties, delays, risk",
   },
   {
     label: "Minimum order",
@@ -108,7 +108,7 @@ const ComparisonSection = () => {
             </p>
           </div>
 
-          {/* Table — desktop */}
+          {/* Table, desktop */}
           <div className="hidden md:block overflow-hidden rounded-2xl border border-border shadow-lg">
             {/* Header row */}
             <div className="grid grid-cols-4 bg-foreground">

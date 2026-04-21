@@ -38,7 +38,7 @@ const products = [
   },
   {
     name: "Eco-Friendly Kraft Packaging",
-    desc: "FSC-certified sustainable packaging — increasingly required by Canadian retailers.",
+    desc: "FSC-certified sustainable packaging, increasingly required by Canadian retailers.",
     moq: "From 50 units",
   },
   {
@@ -67,7 +67,7 @@ const reasons = [
   {
     icon: <CheckCircle className="w-5 h-5" />,
     title: "3D Design Mockup in 48 Hours",
-    desc: "We create a detailed 3D render and digital proof of your packaging within 48 hours. Review and approve before production starts — no commitment required.",
+    desc: "We create a detailed 3D render and digital proof of your packaging within 48 hours. Review and approve before production starts, no commitment required.",
   },
 ];
 
@@ -110,7 +110,7 @@ const faqs = [
   },
   {
     q: "Do you provide a design proof before production starts?",
-    a: "Yes. We provide a detailed 3D mockup and digital proof within 48 hours of your brief. You approve the design before production begins — no commitments required.",
+    a: "Yes. We provide a detailed 3D mockup and digital proof within 48 hours of your brief. You approve the design before production begins, no commitments required.",
   },
 ];
 
@@ -156,11 +156,11 @@ const CustomPackagingCanada = () => {
               <span className="text-primary">Canadian Businesses</span>
             </h1>
             <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Premium custom packaging delivered across Canada — Ontario, BC, Alberta, Quebec, and all provinces. Factory-direct pricing saves Canadian brands 20–30% versus local suppliers.
+              Premium custom packaging delivered across Canada, Ontario, BC, Alberta, Quebec, and all provinces. Factory-direct pricing saves Canadian brands 20–30% versus local suppliers.
             </p>
             <ul className="flex flex-col sm:flex-row gap-3 justify-center mb-10">
               {[
-                "50-unit minimum — no large volume lock-in",
+                "50-unit minimum, no large volume lock-in",
                 "Bilingual (English/French) printing available",
                 "CFIA & FSC-certified options",
               ].map((p) => (
@@ -211,7 +211,7 @@ const CustomPackagingCanada = () => {
                 Why Canadian Brands Choose <span className="text-primary">AAA PAK</span>
               </h2>
               <p className="mt-4 text-muted-foreground text-lg">
-                Compliant materials, bilingual printing, and a 3D design mockup in 48 hours — built for Canadian businesses.
+                Compliant materials, bilingual printing, and a 3D design mockup in 48 hours, built for Canadian businesses.
               </p>
             </div>
             <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
@@ -237,7 +237,7 @@ const CustomPackagingCanada = () => {
               <h2 className="text-3xl md:text-4xl font-extrabold text-foreground">
                 Packaging Products for <span className="text-primary">Canadian Markets</span>
               </h2>
-              <p className="mt-4 text-muted-foreground">Custom sizes, bilingual print, and compliant materials — all in one supplier.</p>
+              <p className="mt-4 text-muted-foreground">Custom sizes, bilingual print, and compliant materials, all in one supplier.</p>
             </div>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
               {products.map((p) => (
@@ -307,7 +307,7 @@ const CustomPackagingCanada = () => {
               ))}
             </div>
             <blockquote className="text-white text-xl md:text-2xl font-semibold leading-relaxed mb-8">
-              "We cut packaging costs by 28% without sacrificing quality. AAA Pak's factory-direct model is the real deal — no middlemen, no surprises. Our rigid boxes look higher-end than boxes that cost us twice as much before."
+              "We cut packaging costs by 28% without sacrificing quality. AAA Pak's factory-direct model is the real deal, no middlemen, no surprises. Our rigid boxes look higher-end than boxes that cost us twice as much before."
             </blockquote>
             <div className="flex items-center gap-3 justify-center">
               <div className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center text-white font-extrabold text-sm">
@@ -315,7 +315,7 @@ const CustomPackagingCanada = () => {
               </div>
               <div className="text-left">
                 <p className="text-white font-bold">Sarah Mitchell</p>
-                <p className="text-white/70 text-sm">Brand Manager, Luxe Beauty Co. — Ontario, Canada</p>
+                <p className="text-white/70 text-sm">Brand Manager, Luxe Beauty Co., Ontario, Canada</p>
               </div>
               <div className="ml-6 text-right hidden sm:block">
                 <p className="text-2xl font-extrabold text-white">28%</p>
@@ -329,7 +329,7 @@ const CustomPackagingCanada = () => {
         <section className="py-20 bg-background">
           <div className="container max-w-3xl mx-auto">
             <h2 className="text-3xl font-extrabold text-foreground text-center mb-12">
-              Custom Packaging Canada — FAQ
+              Custom Packaging Canada, FAQ
             </h2>
             <div className="space-y-6">
               {faqs.map((f) => (

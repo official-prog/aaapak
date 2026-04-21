@@ -45,8 +45,8 @@ const Index = () => {
   return (
     <div className="min-h-screen">
       <SEO
-        title="Custom Packaging Boxes | AAA PAK — USA & Canada"
-        description="AAA PAK offers premium custom packaging — corrugated boxes, mailer bags, rigid boxes, retail packaging & more. Free design support. Ships across USA & Canada."
+        title="Custom Packaging Boxes | AAA PAK, USA & Canada"
+        description="AAA PAK offers premium custom packaging, corrugated boxes, mailer bags, rigid boxes, retail packaging & more. Free design support. Ships across USA & Canada."
         canonical="https://www.aaapak.com/"
       />
       <Header />

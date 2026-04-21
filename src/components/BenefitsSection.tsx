@@ -8,7 +8,7 @@ const reasons = [
     stat: "30%",
     statSub: "lower cost",
     title: "Keep the Margin Your Broker Was Taking",
-    desc: "We work directly with certified factories — you pay manufacturing cost, not an agency's 30–40% markup on top.",
+    desc: "We work directly with certified factories, you pay manufacturing cost, not an agency's 30–40% markup on top.",
   },
   {
     stat: "50",
@@ -20,7 +20,7 @@ const reasons = [
     stat: "1",
     statSub: "team",
     title: "One Team, Start to Finish",
-    desc: "Design, sampling, production, and delivery — you deal with one person, not four vendors. Nothing falls through the gaps.",
+    desc: "Design, sampling, production, and delivery, you deal with one person, not four vendors. Nothing falls through the gaps.",
   },
   {
     stat: "15d",
@@ -75,7 +75,7 @@ const BenefitsSection = () => {
                 <span className="text-primary">We Handle All of It.</span>
               </h3>
               <p className="mt-4 text-muted-foreground text-lg max-w-md">
-                One quote. One contact. One delivery. Your dedicated account manager knows your brand specs, your deadlines, and your budget — from the first call to the last shipment.
+                One quote. One contact. One delivery. Your dedicated account manager knows your brand specs, your deadlines, and your budget, from the first call to the last shipment.
               </p>
 
               <button

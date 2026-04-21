@@ -23,7 +23,7 @@ const products = [
   { name: "Restaurants", description: "Custom packaging solutions for restaurants", image: restaurants },
   { name: "Inserts", description: "Custom box inserts for protection & presentation", image: inserts },
   {
-    name: "Explore Our Full Catalog — Everything You Need, One Click Away",
+    name: "Explore Our Full Catalog, Everything You Need, One Click Away",
     description: "Explore our full product range, specs, and custom options on our website.",
     image: qualityTesting,
     href: "https://aaapak.com/all-products/",

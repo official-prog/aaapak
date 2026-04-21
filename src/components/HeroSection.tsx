@@ -41,12 +41,12 @@ const HeroSection = () => {
               Delivered in 15 Days.
             </h1>
             <p className="mt-5 text-lg text-muted-foreground max-w-md">
-              One team. One contact. Everything from design to delivery — without the broker taking 30% off the top.
+              One team. One contact. Everything from design to delivery, without the broker taking 30% off the top.
             </p>
             <ul className="mt-5 space-y-2">
               {[
                 "3D design mockup ready in 48 hours",
-                "From 50 units — scale up as you grow",
+                "From 50 units, scale up as you grow",
                 "Door-to-door shipping, USA & Canada",
               ].map((point) => (
                 <li key={point} className="flex items-center gap-2.5 text-base text-muted-foreground">

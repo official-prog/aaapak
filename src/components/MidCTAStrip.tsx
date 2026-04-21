@@ -8,7 +8,7 @@ const guarantees = [
   { icon: <CheckCircle className="w-4 h-4" />, text: "3D Mockup in 48h" },
   { icon: <Shield className="w-4 h-4" />, text: "No Obligation" },
   { icon: <Clock className="w-4 h-4" />, text: "Reply in 24 Hours" },
-  { icon: <CheckCircle className="w-4 h-4" />, text: "All-In Pricing — No Hidden Fees" },
+  { icon: <CheckCircle className="w-4 h-4" />, text: "All-In Pricing, No Hidden Fees" },
 ];
 
 const MidCTAStrip = () => {
@@ -34,7 +34,7 @@ const MidCTAStrip = () => {
             Ready to Cut Your Packaging Bill by 30%?
           </h2>
           <p className="text-white/80 text-lg mb-8 max-w-xl mx-auto leading-relaxed">
-            Tell us what you need — we'll send a detailed quote and 3D mockup within 24–48 hours. No obligation.
+            Tell us what you need, we'll send a detailed quote and 3D mockup within 24–48 hours. No obligation.
           </p>
 
           {/* CTA buttons */}

@@ -149,11 +149,11 @@ const FoodPackaging = () => {
               FDA-Compliant · FSC-Certified · USA & Canada
             </span>
             <h1 className="text-4xl md:text-5xl font-black leading-tight text-foreground mb-6">
-              Custom Food Packaging Supplier —{" "}
+              Custom Food Packaging Supplier" }" "}
               <span className="text-primary">USA & Canada</span>
             </h1>
             <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-              FDA-compliant, food-safe packaging for CPG brands, meal kits, bakeries, and food distributors. Factory-direct pricing from 50 units — delivered across USA and Canada.
+              FDA-compliant, food-safe packaging for CPG brands, meal kits, bakeries, and food distributors. Factory-direct pricing from 50 units, delivered across USA and Canada.
             </p>
             <ul className="flex flex-col sm:flex-row gap-3 justify-center mb-10">
               {[
@@ -279,7 +279,7 @@ const FoodPackaging = () => {
               ))}
             </div>
             <blockquote className="text-white text-xl md:text-2xl font-semibold leading-relaxed mb-8">
-              "Switched to AAA Pak's corrugated line after two bad suppliers. Product damage dropped 40% in 3 months. Their structural engineers actually solved our insert problem — something nobody else bothered to do."
+              "Switched to AAA Pak's corrugated line after two bad suppliers. Product damage dropped 40% in 3 months. Their structural engineers actually solved our insert problem, something nobody else bothered to do."
             </blockquote>
             <div className="flex items-center gap-3 justify-center">
               <div className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center text-white font-extrabold text-sm">
@@ -301,7 +301,7 @@ const FoodPackaging = () => {
         <section className="py-20 bg-background">
           <div className="container max-w-3xl mx-auto">
             <h2 className="text-3xl font-extrabold text-foreground text-center mb-12">
-              Food Packaging Supplier — FAQ
+              Food Packaging Supplier, FAQ
             </h2>
             <div className="space-y-6">
               {faqs.map((f) => (

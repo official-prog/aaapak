@@ -51,7 +51,7 @@ const products = [
 const reasons = [
   {
     icon: <Package className="w-5 h-5" />,
-    title: "Factory-Direct — No Middleman Markup",
+    title: "Factory-Direct, No Middleman Markup",
     desc: "You pay what a certified factory charges, not what a local packaging broker marks up. Our direct model delivers 20–30% savings versus typical USA suppliers.",
   },
   {
@@ -81,7 +81,7 @@ const usStates = [
 const faqs = [
   {
     q: "What is the minimum order quantity for custom packaging in the USA?",
-    a: "Our minimum order quantity starts at 50 units for most packaging types — mailer boxes, rigid boxes, and custom folding cartons. Corrugated shipping boxes start from 100 units.",
+    a: "Our minimum order quantity starts at 50 units for most packaging types, mailer boxes, rigid boxes, and custom folding cartons. Corrugated shipping boxes start from 100 units.",
   },
   {
     q: "How long does custom packaging delivery take to the USA?",
@@ -89,7 +89,7 @@ const faqs = [
   },
   {
     q: "Do you provide a design proof before production?",
-    a: "Yes. We provide a detailed 3D mockup and digital proof within 48 hours of your brief. You review and approve the design before we begin manufacturing — no commitment required.",
+    a: "Yes. We provide a detailed 3D mockup and digital proof within 48 hours of your brief. You review and approve the design before we begin manufacturing, no commitment required.",
   },
   {
     q: "Can you match Pantone or brand-specific colors?",
@@ -101,7 +101,7 @@ const faqs = [
   },
   {
     q: "Are customs and import duties included in your USA pricing?",
-    a: "Yes. Our all-in pricing for USA orders includes freight, customs clearance, and import duties. There are no surprise fees on delivery — the price you quote is the price you pay.",
+    a: "Yes. Our all-in pricing for USA orders includes freight, customs clearance, and import duties. There are no surprise fees on delivery, the price you quote is the price you pay.",
   },
   {
     q: "What printing options are available for USA custom packaging?",
@@ -151,13 +151,13 @@ const CustomPackagingUSA = () => {
               <span className="text-primary">USA Businesses</span>
             </h1>
             <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Save 20–30% on branded packaging with factory-direct pricing — no middlemen, no surprise fees. 3D design mockup delivered in 48 hours before production starts.
+              Save 20–30% on branded packaging with factory-direct pricing, no middlemen, no surprise fees. 3D design mockup delivered in 48 hours before production starts.
             </p>
             <ul className="flex flex-col sm:flex-row gap-3 justify-center mb-10">
               {[
                 "50-unit minimum order",
                 "10–15 business day delivery",
-                "All-in USA pricing — no hidden import fees",
+                "All-in USA pricing, no hidden import fees",
               ].map((p) => (
                 <li key={p} className="flex items-center gap-2 text-sm font-medium text-foreground">
                   <CheckCircle className="w-4 h-4 text-primary shrink-0" />
@@ -206,7 +206,7 @@ const CustomPackagingUSA = () => {
                 Why USA Brands Choose <span className="text-primary">AAA PAK</span>
               </h2>
               <p className="mt-4 text-muted-foreground text-lg">
-                Factory pricing, US compliance, and zero-risk sampling — all in one supplier.
+                Factory pricing, US compliance, and zero-risk sampling, all in one supplier.
               </p>
             </div>
             <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
@@ -232,7 +232,7 @@ const CustomPackagingUSA = () => {
               <h2 className="text-3xl md:text-4xl font-extrabold text-foreground">
                 Custom Packaging Products for <span className="text-primary">USA Businesses</span>
               </h2>
-              <p className="mt-4 text-muted-foreground">All products fully customizable — size, print, finish, and insert.</p>
+              <p className="mt-4 text-muted-foreground">All products fully customizable, size, print, finish, and insert.</p>
             </div>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
               {products.map((p) => (
@@ -297,7 +297,7 @@ const CustomPackagingUSA = () => {
               </div>
               <div className="text-left">
                 <p className="text-white font-bold">Michael R.</p>
-                <p className="text-white/70 text-sm">Head of Supply Chain, MidWest Retail Group — Illinois</p>
+                <p className="text-white/70 text-sm">Head of Supply Chain, MidWest Retail Group, Illinois</p>
               </div>
               <div className="ml-6 text-right hidden sm:block">
                 <p className="text-2xl font-extrabold text-white">$18K</p>
@@ -311,7 +311,7 @@ const CustomPackagingUSA = () => {
         <section className="py-20 bg-background">
           <div className="container max-w-3xl mx-auto">
             <h2 className="text-3xl font-extrabold text-foreground text-center mb-12">
-              Custom Packaging USA — Frequently Asked Questions
+              Custom Packaging USA, Frequently Asked Questions
             </h2>
             <div className="space-y-6">
               {faqs.map((f) => (

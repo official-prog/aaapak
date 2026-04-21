@@ -6,7 +6,7 @@ const testimonials = [
     role: "Brand Manager",
     result: "28% cost saved",
     resultSub: "vs. previous supplier",
-    text: "We cut packaging costs by 28% without sacrificing quality. AAA Pak's factory-direct model is the real deal — no middlemen, no surprises. Our rigid boxes look higher-end than boxes that cost us twice as much before.",
+    text: "We cut packaging costs by 28% without sacrificing quality. AAA Pak's factory-direct model is the real deal, no middlemen, no surprises. Our rigid boxes look higher-end than boxes that cost us twice as much before.",
     stars: 5,
   },
   {
@@ -14,7 +14,7 @@ const testimonials = [
     role: "Operations Lead",
     result: "40% fewer returns",
     resultSub: "due to packaging damage",
-    text: "Switched to AAA Pak's corrugated line after two bad suppliers. Product damage dropped 40% in 3 months. Their structural engineers actually solved our insert problem — something nobody else bothered to do.",
+    text: "Switched to AAA Pak's corrugated line after two bad suppliers. Product damage dropped 40% in 3 months. Their structural engineers actually solved our insert problem, something nobody else bothered to do.",
     stars: 5,
   },
   {
@@ -30,7 +30,7 @@ const testimonials = [
     role: "CEO",
     result: "4.1→4.6 stars",
     resultSub: "Amazon rating in 90 days",
-    text: "Our Amazon reviews went from 4.1 to 4.6 stars in 90 days. Customers kept praising the packaging — something they never mentioned before. That's what AAA Pak's quality does for your brand perception.",
+    text: "Our Amazon reviews went from 4.1 to 4.6 stars in 90 days. Customers kept praising the packaging, something they never mentioned before. That's what AAA Pak's quality does for your brand perception.",
     stars: 5,
   },
 ];
@@ -48,7 +48,7 @@ const TestimonialsSection = () => (
           Trusted by <span className="text-primary">300+ Brands</span> Across USA & Canada
         </h2>
         <p className="mt-4 text-muted-foreground text-lg">
-          Hard numbers from real brands — not generic 5-star filler.
+          Hard numbers from real brands, not generic 5-star filler.
         </p>
       </div>
 
