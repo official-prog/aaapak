@@ -89,10 +89,10 @@ const ProcessSection = () => (
             </span>
 
             {/* Title */}
-            <h3 className="mt-2 font-extrabold text-foreground text-sm leading-snug px-1">{s.title}</h3>
+            <h3 className="mt-2 font-extrabold text-foreground text-sm leading-snug px-1 min-h-[2.5rem] flex items-start justify-center">{s.title}</h3>
 
             {/* Description */}
-            <p className="mt-1.5 text-xs text-muted-foreground leading-relaxed px-1">{s.desc}</p>
+            <p className="mt-1.5 text-xs text-muted-foreground leading-relaxed px-1 min-h-[5rem]">{s.desc}</p>
 
             {/* Stat badge */}
             <div className="mt-4 bg-background border border-border rounded-xl px-3 py-2 text-center shadow-sm">
