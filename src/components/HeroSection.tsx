@@ -47,7 +47,7 @@ const HeroSection = () => {
               {[
                 "3D design mockup ready in 48 hours",
                 "From 50 units — scale up as you grow",
-                "10–15 business day delivery, USA & Canada",
+                "Door-to-door shipping, USA & Canada",
               ].map((point) => (
                 <li key={point} className="flex items-center gap-2.5 text-base text-muted-foreground">
                   <span className="w-5 h-5 rounded-full bg-primary/15 flex items-center justify-center shrink-0">

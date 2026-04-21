@@ -113,12 +113,12 @@ const ComparisonSection = () => {
             {/* Header row */}
             <div className="grid grid-cols-4 bg-foreground">
               <div className="p-5" />
-              <div className="p-5 bg-primary relative">
-                <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-white text-primary text-[10px] font-extrabold px-3 py-1 rounded-full shadow border border-primary/20 uppercase tracking-wide whitespace-nowrap">
+              <div className="p-5 bg-primary flex flex-col items-center gap-1.5">
+                <span className="bg-white text-primary text-[10px] font-extrabold px-3 py-1 rounded-full shadow border border-primary/20 uppercase tracking-wide whitespace-nowrap">
                   Best Choice
-                </div>
+                </span>
                 <p className="text-white font-extrabold text-center text-lg">AAA PAK</p>
-                <p className="text-white/70 text-xs text-center mt-0.5">Factory-Direct</p>
+                <p className="text-white/70 text-xs text-center">Factory-Direct</p>
               </div>
               <div className="p-5">
                 <p className="text-white/80 font-bold text-center">Local Broker</p>
