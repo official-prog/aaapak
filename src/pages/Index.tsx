@@ -21,14 +21,11 @@ const FAQSection = lazy(() => import("@/components/FAQSection"));
 const ContactSection = lazy(() => import("@/components/ContactSection"));
 const Footer = lazy(() => import("@/components/Footer"));
 
-const POPUP_KEY = "aaapak_quote_popup_v2";
+const POPUP_KEY = "aaapak_popup_session_v3";
 
 const shouldShowPopup = () => {
   try {
-    const stored = localStorage.getItem(POPUP_KEY);
-    if (!stored) return true;
-    const lastShown = parseInt(stored, 10);
-    return Date.now() - lastShown > 24 * 60 * 60 * 1000;
+    return !sessionStorage.getItem(POPUP_KEY);
   } catch {
     return true;
   }
@@ -40,9 +37,9 @@ const Index = () => {
   useEffect(() => {
     if (!shouldShowPopup()) return;
     const timer = setTimeout(() => {
-      try { localStorage.setItem(POPUP_KEY, String(Date.now())); } catch {}
+      try { sessionStorage.setItem(POPUP_KEY, "1"); } catch {}
       setPopupOpen(true);
-    }, 3000);
+    }, 0);
     return () => clearTimeout(timer);
   }, []);
 
