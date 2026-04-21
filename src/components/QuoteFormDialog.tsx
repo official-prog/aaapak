@@ -79,7 +79,7 @@ const QuoteFormDialog = ({ open, onOpenChange, productName }: QuoteFormDialogPro
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="sm:max-w-lg max-h-[90vh] overflow-y-auto">
+      <DialogContent className="w-[calc(100vw-2rem)] sm:max-w-lg max-h-[85vh] overflow-y-auto rounded-lg">
         <DialogHeader>
           <DialogTitle className="text-xl font-bold text-foreground">
             Get a Quote: Custom Packaging
