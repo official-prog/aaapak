@@ -46,7 +46,7 @@ const HeroSection = () => {
             <ul className="mt-5 space-y-2">
               {[
                 "You pay factory price — not agency markup",
-                "Free physical sample before you spend a dollar",
+                "3D design mockup delivered in 48 hours",
                 "From 50 units — no large volume lock-in",
               ].map((point) => (
                 <li key={point} className="flex items-center gap-2.5 text-base text-muted-foreground">
@@ -81,7 +81,7 @@ const HeroSection = () => {
             </div>
             {/* Risk reversal micro-copy */}
             <p className="mt-3 text-xs text-muted-foreground">
-              Free physical samples · No commitment · Quote delivered in 24 hours
+              3D design mockup · No commitment · Quote delivered in 24 hours
             </p>
             {/* Trust bar */}
             <div className="mt-5 flex items-center gap-3 text-sm text-muted-foreground">

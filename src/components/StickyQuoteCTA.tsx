@@ -28,7 +28,7 @@ const StickyQuoteCTA = () => {
         <div className="container max-w-4xl mx-auto flex items-center gap-4 flex-wrap">
           {/* Trust pills */}
           <div className="hidden md:flex items-center gap-4 flex-1">
-            {["Free Sample", "Quote in 24h", "No Commitment"].map((t) => (
+            {["3D Mockup", "Quote in 24h", "No Commitment"].map((t) => (
               <span key={t} className="flex items-center gap-1.5 text-xs font-medium text-muted-foreground">
                 <CheckCircle className="w-3.5 h-3.5 text-primary" />
                 {t}

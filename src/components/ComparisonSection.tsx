@@ -17,7 +17,7 @@ const rows = [
     overseas: "1,000 – 5,000+ units",
   },
   {
-    label: "Free physical sample",
+    label: "3D design mockup included",
     aaa: true,
     broker: false,
     overseas: false,
@@ -208,7 +208,7 @@ const ComparisonSection = () => {
               <div className="space-y-3">
                 <div className="p-3 bg-red-50 rounded-xl border border-red-100">
                   <p className="text-sm font-bold text-foreground mb-1">Local Broker</p>
-                  <p className="text-xs text-muted-foreground">+25–40% markup · 500+ unit MOQ · 4–8 week turnaround · No free samples</p>
+                  <p className="text-xs text-muted-foreground">+25–40% markup · 500+ unit MOQ · 4–8 week turnaround · No design mockup</p>
                 </div>
                 <div className="p-3 bg-orange-50 rounded-xl border border-orange-100">
                   <p className="text-sm font-bold text-foreground mb-1">DIY Overseas</p>

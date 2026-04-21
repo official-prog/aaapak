@@ -12,7 +12,7 @@ const stats = [
   { value: "300+", label: "USA Brands Served" },
   { value: "50", label: "Unit Minimum Order" },
   { value: "10–15", label: "Business Day Delivery" },
-  { value: "Free", label: "Physical Samples" },
+  { value: "48h", label: "Design Mockup" },
 ];
 
 const products = [
@@ -61,8 +61,8 @@ const reasons = [
   },
   {
     icon: <CheckCircle className="w-5 h-5" />,
-    title: "Free Physical Samples Before You Commit",
-    desc: "We ship a physical sample to any US address before production starts. Approve the real thing — not a digital mock-up — before spending a dollar on your order.",
+    title: "3D Design Mockup in 48 Hours",
+    desc: "We create a detailed 3D render and digital proof of your packaging before production starts. Review and approve before spending a dollar on your order.",
   },
   {
     icon: <Truck className="w-5 h-5" />,
@@ -88,8 +88,8 @@ const faqs = [
     a: "Standard production and delivery to all US states takes 10–15 business days from artwork approval. Rush options are available for select product types.",
   },
   {
-    q: "Do you offer free samples before I place a USA order?",
-    a: "Yes. We ship free physical samples to any US address before you commit to a production order. You approve the physical sample — not a digital proof — before we begin manufacturing.",
+    q: "Do you provide a design proof before production?",
+    a: "Yes. We provide a detailed 3D mockup and digital proof within 48 hours of your brief. You review and approve the design before we begin manufacturing — no commitment required.",
   },
   {
     q: "Can you match Pantone or brand-specific colors?",
@@ -129,11 +129,11 @@ const CustomPackagingUSA = () => {
         <title>Custom Packaging Boxes USA | Low MOQ, Factory-Direct | AAA PAK</title>
         <meta
           name="description"
-          content="Custom packaging boxes for USA businesses. Corrugated, mailer, rigid, and retail packaging from 50 units. 10–15 day delivery to all 50 states. Free samples. Factory-direct pricing."
+          content="Custom packaging boxes for USA businesses. Corrugated, mailer, rigid, and retail packaging from 50 units. 10–15 day delivery to all 50 states. 3D design mockup in 48h. Factory-direct pricing."
         />
         <link rel="canonical" href="https://www.aaapak.com/custom-packaging-usa" />
         <meta property="og:title" content="Custom Packaging Boxes USA | AAA PAK" />
-        <meta property="og:description" content="Factory-direct custom packaging for USA brands. 50-unit MOQ, free samples, 10–15 day delivery across all 50 states." />
+        <meta property="og:description" content="Factory-direct custom packaging for USA brands. 50-unit MOQ, 3D design mockup in 48h, 10–15 day delivery across all 50 states." />
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
       </Helmet>
 
@@ -151,7 +151,7 @@ const CustomPackagingUSA = () => {
               <span className="text-primary">USA Businesses</span>
             </h1>
             <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Save 20–30% on branded packaging with factory-direct pricing — no middlemen, no surprise fees. Free samples shipped to your US address before you commit.
+              Save 20–30% on branded packaging with factory-direct pricing — no middlemen, no surprise fees. 3D design mockup delivered in 48 hours before production starts.
             </p>
             <ul className="flex flex-col sm:flex-row gap-3 justify-center mb-10">
               {[
@@ -349,7 +349,7 @@ const CustomPackagingUSA = () => {
               Ready to Cut Your USA Packaging Costs?
             </h2>
             <p className="text-muted-foreground mb-8">
-              Get a free, no-obligation quote in 24 hours. Free samples shipped to any US address.
+              Get a free, no-obligation quote in 24 hours. 3D design mockup delivered within 48 hours.
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
               <Button size="lg" className="font-semibold px-8" onClick={() => setQuoteOpen(true)}>

@@ -14,11 +14,11 @@ const steps = [
   {
     num: "02",
     icon: <Package className="w-6 h-6" />,
-    tag: "Sample",
-    title: "Receive Your Free Sample",
-    desc: "We ship a real physical sample to your door — no payment, no commitment required.",
-    stat: "Free",
-    statLabel: "No commitment",
+    tag: "Mockup",
+    title: "Receive Your 3D Design Mockup",
+    desc: "We send a detailed 3D render and digital proof for your review — no commitment required.",
+    stat: "48h",
+    statLabel: "Mockup delivery",
     color: "bg-violet-50 text-violet-600 border-violet-100",
   },
   {
@@ -66,7 +66,7 @@ const ProcessSection = () => (
           From Idea to Your Door in <span className="text-primary">5 Simple Steps</span>
         </h2>
         <p className="mt-4 text-muted-foreground text-lg">
-          No upfront costs. Free sample before you commit. Delivered in under 3 weeks.
+          No upfront costs. 3D mockup in 48 hours. Delivered in under 3 weeks.
         </p>
       </div>
 

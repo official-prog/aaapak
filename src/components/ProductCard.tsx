@@ -44,7 +44,7 @@ const ProductCard = ({ name, description, image, href }: ProductCardProps) => {
                 Get a Free Quote
               </Button>
               <p className="mt-1.5 text-center text-[11px] text-muted-foreground">
-                Free sample · No commitment required
+                3D mockup · No commitment required
               </p>
             </>
           )}

@@ -12,7 +12,7 @@ const stats = [
   { value: "100+", label: "Canadian Brands Served" },
   { value: "50", label: "Unit Minimum Order" },
   { value: "10–15", label: "Business Day Delivery" },
-  { value: "Free", label: "Physical Samples" },
+  { value: "48h", label: "Design Mockup" },
 ];
 
 const products = [
@@ -66,8 +66,8 @@ const reasons = [
   },
   {
     icon: <CheckCircle className="w-5 h-5" />,
-    title: "Free Samples to Any Canadian Address",
-    desc: "We ship free physical samples to any Ontario, BC, Alberta, Quebec, or Maritime address. Approve the real product before committing to a production order.",
+    title: "3D Design Mockup in 48 Hours",
+    desc: "We create a detailed 3D render and digital proof of your packaging within 48 hours. Review and approve before production starts — no commitment required.",
   },
 ];
 
@@ -109,8 +109,8 @@ const faqs = [
     a: "Yes. Our eco product line uses FSC-certified kraft and corrugated materials. We can provide FSC chain-of-custody documentation on request.",
   },
   {
-    q: "Can I get samples shipped to my Canadian address before ordering?",
-    a: "Absolutely. We ship free physical samples to any Canadian address. You approve the physical sample before production begins — no commitments required.",
+    q: "Do you provide a design proof before production starts?",
+    a: "Yes. We provide a detailed 3D mockup and digital proof within 48 hours of your brief. You approve the design before production begins — no commitments required.",
   },
 ];
 
@@ -134,11 +134,11 @@ const CustomPackagingCanada = () => {
         <title>Custom Packaging Canada | Ontario, BC, Alberta | Low MOQ | AAA PAK</title>
         <meta
           name="description"
-          content="Custom packaging supplier for Canadian businesses. Corrugated, mailer, rigid and retail packaging from 50 units. Delivery to Ontario, BC, Alberta, Quebec and all provinces. Free samples."
+          content="Custom packaging supplier for Canadian businesses. Corrugated, mailer, rigid and retail packaging from 50 units. Delivery to Ontario, BC, Alberta, Quebec and all provinces. 3D design mockup in 48h."
         />
         <link rel="canonical" href="https://www.aaapak.com/custom-packaging-canada" />
         <meta property="og:title" content="Custom Packaging Canada | AAA PAK" />
-        <meta property="og:description" content="Factory-direct custom packaging for Canadian brands. 50-unit MOQ, bilingual printing, CFIA-compliant materials. Free samples shipped to any Canadian address." />
+        <meta property="og:description" content="Factory-direct custom packaging for Canadian brands. 50-unit MOQ, bilingual printing, CFIA-compliant materials. 3D design mockup in 48 hours." />
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
       </Helmet>
 
@@ -211,7 +211,7 @@ const CustomPackagingCanada = () => {
                 Why Canadian Brands Choose <span className="text-primary">AAA PAK</span>
               </h2>
               <p className="mt-4 text-muted-foreground text-lg">
-                Compliant materials, bilingual printing, and zero-risk sampling — built for Canadian businesses.
+                Compliant materials, bilingual printing, and a 3D design mockup in 48 hours — built for Canadian businesses.
               </p>
             </div>
             <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
@@ -367,7 +367,7 @@ const CustomPackagingCanada = () => {
               Get a Quote for Custom Packaging in Canada
             </h2>
             <p className="text-muted-foreground mb-8">
-              Free quote in 24 hours. Free physical samples shipped to your Canadian address.
+              Free quote in 24 hours. 3D design mockup delivered within 48 hours.
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
               <Button size="lg" className="font-semibold px-8" onClick={() => setQuoteOpen(true)}>

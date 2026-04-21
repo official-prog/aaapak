@@ -12,7 +12,7 @@ const stats = [
   { value: "50", label: "Unit Minimum" },
   { value: "10–15", label: "Business Day Delivery" },
   { value: "20–30%", label: "Cost Savings vs. Local" },
-  { value: "Free", label: "Physical Samples" },
+  { value: "48h", label: "Design Mockup" },
 ];
 
 const boxStyles = [
@@ -141,7 +141,7 @@ const CorrugatedBoxes = () => {
         <title>Custom Corrugated Boxes | Wholesale Pricing from 50 Units | AAA PAK</title>
         <meta
           name="description"
-          content="Custom corrugated boxes for USA and Canada businesses. RSC, die-cut, mailer boxes, and more. All flute types. 50-unit MOQ. CMYK and Pantone printing. Free samples. 10–15 day delivery."
+          content="Custom corrugated boxes for USA and Canada businesses. RSC, die-cut, mailer boxes, and more. All flute types. 50-unit MOQ. CMYK and Pantone printing. 3D design mockup. 10–15 day delivery."
         />
         <link rel="canonical" href="https://www.aaapak.com/corrugated-boxes" />
         <meta property="og:title" content="Custom Corrugated Boxes | AAA PAK" />

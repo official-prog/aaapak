@@ -5,7 +5,7 @@ import QuoteFormDialog from "./QuoteFormDialog";
 import ConsultationDialog from "./ConsultationDialog";
 
 const guarantees = [
-  { icon: <CheckCircle className="w-4 h-4" />, text: "Free Physical Sample" },
+  { icon: <CheckCircle className="w-4 h-4" />, text: "3D Design Mockup" },
   { icon: <Shield className="w-4 h-4" />, text: "No Commitment Required" },
   { icon: <Clock className="w-4 h-4" />, text: "Quote in 24 Hours" },
   { icon: <CheckCircle className="w-4 h-4" />, text: "Guaranteed Cost Savings" },
@@ -35,7 +35,7 @@ const MidCTAStrip = () => {
             <span className="underline decoration-white/40">No Commitment Required</span>
           </h2>
           <p className="text-white/80 text-lg mb-8 max-w-xl mx-auto leading-relaxed">
-            Free physical sample shipped to your door. Guaranteed 20–30% savings vs. local suppliers — or we'll match any verified quote.
+            3D design mockup in 48 hours. Guaranteed 20–30% savings vs. local suppliers — or we'll match any verified quote.
           </p>
 
           {/* CTA buttons */}

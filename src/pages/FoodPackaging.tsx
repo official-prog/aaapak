@@ -12,7 +12,7 @@ const stats = [
   { value: "50", label: "Unit Minimum" },
   { value: "FDA", label: "Compliant Materials" },
   { value: "FSC", label: "Certified Eco Options" },
-  { value: "Free", label: "Physical Samples" },
+  { value: "48h", label: "Design Mockup" },
 ];
 
 const products = [
@@ -131,7 +131,7 @@ const FoodPackaging = () => {
         <title>Food Packaging Supplier USA & Canada | FDA-Compliant | AAA PAK</title>
         <meta
           name="description"
-          content="Custom food packaging supplier for USA and Canada. FDA-compliant, FSC-certified, BPA-free. Retail cartons, shipping boxes, meal kit packaging from 50 units. Free samples."
+          content="Custom food packaging supplier for USA and Canada. FDA-compliant, FSC-certified, BPA-free. Retail cartons, shipping boxes, meal kit packaging from 50 units. 3D design mockup in 48h."
         />
         <link rel="canonical" href="https://www.aaapak.com/food-packaging" />
         <meta property="og:title" content="Food Packaging Supplier USA & Canada | AAA PAK" />
@@ -159,7 +159,7 @@ const FoodPackaging = () => {
               {[
                 "FDA & CFIA-compliant materials",
                 "FSC-certified eco options for major retailers",
-                "Free physical samples shipped before ordering",
+                "3D design mockup delivered in 48 hours",
               ].map((p) => (
                 <li key={p} className="flex items-center gap-2 text-sm font-medium text-foreground">
                   <CheckCircle className="w-4 h-4 text-primary shrink-0" />
