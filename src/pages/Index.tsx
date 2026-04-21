@@ -7,6 +7,7 @@ import WhatsAppButton from "@/components/WhatsAppButton";
 import StickyQuoteCTA from "@/components/StickyQuoteCTA";
 import QuoteFormDialog from "@/components/QuoteFormDialog";
 
+const ComparisonSection = lazy(() => import("@/components/ComparisonSection"));
 const ServicesSection = lazy(() => import("@/components/ServicesSection"));
 const ProcessSection = lazy(() => import("@/components/ProcessSection"));
 const BenefitsSection = lazy(() => import("@/components/BenefitsSection"));
@@ -57,6 +58,7 @@ const Index = () => {
         <HeroSection />
         <ProductsSection />
         <Suspense fallback={null}>
+          <ComparisonSection />
           <ServicesSection />
           <ProcessSection />
           <BenefitsSection />

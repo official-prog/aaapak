@@ -33,16 +33,20 @@ const HeroSection = () => {
         <div className="relative container py-12 md:py-16">
           <div className="max-w-lg animate-fade-in-up">
             <span className="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-semibold mb-5 tracking-wide uppercase">
-              Factory-Direct · Low MOQ · USA & Canada
+              No Broker Markup · Factory-Direct · USA & Canada
             </span>
             <h1 className="text-4xl md:text-5xl lg:text-[52px] font-black leading-[1.1] text-foreground text-balance">
-              Save 20–30% on Custom Packaging with Low MOQs & End-to-End Support
+              Your Competitors Are Overpaying for Packaging.{" "}
+              <span className="text-primary">You Don't Have To.</span>
             </h1>
+            <p className="mt-4 text-lg text-muted-foreground max-w-md">
+              AAA Pak cuts out the broker — you pay factory prices directly. 20–30% cheaper than local suppliers, with one team handling everything start to finish.
+            </p>
             <ul className="mt-5 space-y-2">
               {[
-                "Free sampling before you commit",
-                "Fast turnaround — 10–15 business days",
-                "Delivered across USA & Canada",
+                "No middleman — you pay what the factory charges",
+                "Free sample shipped to your door before you commit",
+                "10–15 business days, delivered across USA & Canada",
               ].map((point) => (
                 <li key={point} className="flex items-center gap-2.5 text-base text-muted-foreground">
                   <span className="w-5 h-5 rounded-full bg-primary/15 flex items-center justify-center shrink-0">
