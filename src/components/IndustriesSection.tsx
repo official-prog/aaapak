@@ -152,7 +152,7 @@ const IndustriesSection = () => {
           {[...industries, ...industries].map((ind, i) => (
             <div
               key={`${ind.name}-${i}`}
-              className="flex-shrink-0 w-36 md:w-44 bg-secondary rounded-xl border border-border p-3 text-center pointer-events-none"
+              className="flex-shrink-0 w-36 md:w-44 bg-secondary rounded-xl border border-border p-3 text-center hover:shadow-md hover:border-primary/30 transition-all duration-200"
             >
               <div className="w-full h-32 md:h-36 flex items-center justify-center mb-2 overflow-hidden rounded-lg">
                 <img
