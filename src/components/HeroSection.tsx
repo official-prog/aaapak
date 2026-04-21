@@ -33,20 +33,21 @@ const HeroSection = () => {
         <div className="relative container py-12 md:py-16">
           <div className="max-w-lg animate-fade-in-up">
             <span className="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-semibold mb-5 tracking-wide uppercase">
-              No Broker Markup · Factory-Direct · USA & Canada
+              Factory-Direct · No Broker Markup · USA & Canada
             </span>
-            <h1 className="text-4xl md:text-5xl lg:text-[52px] font-black leading-[1.1] text-foreground text-balance">
-              Your Competitors Are Overpaying for Packaging.{" "}
-              <span className="text-primary">You Don't Have To.</span>
+            <h1 className="text-4xl md:text-5xl lg:text-[52px] font-black leading-[1.08] text-foreground">
+              Premium Custom Packaging.<br />
+              <span className="text-primary">30% Below Market Price.</span><br />
+              Delivered in 15 Days.
             </h1>
-            <p className="mt-4 text-lg text-muted-foreground max-w-md">
-              AAA Pak cuts out the broker — you pay factory prices directly. 20–30% cheaper than local suppliers, with one team handling everything start to finish.
+            <p className="mt-5 text-lg text-muted-foreground max-w-md">
+              300+ USA & Canada brands ditched their broker and switched to AAA Pak. Same quality. Factory cost. One team handles everything — design to delivery.
             </p>
             <ul className="mt-5 space-y-2">
               {[
-                "No middleman — you pay what the factory charges",
-                "Free sample shipped to your door before you commit",
-                "10–15 business days, delivered across USA & Canada",
+                "You pay factory price — not agency markup",
+                "Free physical sample before you spend a dollar",
+                "From 50 units — no large volume lock-in",
               ].map((point) => (
                 <li key={point} className="flex items-center gap-2.5 text-base text-muted-foreground">
                   <span className="w-5 h-5 rounded-full bg-primary/15 flex items-center justify-center shrink-0">
