@@ -1,3 +1,5 @@
+import { useRef } from "react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import indApparel       from "@/assets/ind-apparel.png";
 import indAutomotive    from "@/assets/ind-automotive.png";
 import indBakery        from "@/assets/ind-bakery.png";
@@ -58,45 +60,99 @@ const industries = [
   { name: "Window",         image: indWindow },
 ];
 
-const IndustriesSection = () => (
-  <section id="industries" className="py-20 md:py-28 bg-card overflow-hidden">
-    <div className="container">
-      <div className="text-center max-w-2xl mx-auto mb-14">
-        <span className="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-semibold mb-4 tracking-wide uppercase">
-          Industries
-        </span>
-        <h2 className="text-3xl md:text-4xl font-extrabold text-foreground">Industries We Serve</h2>
-        <p className="mt-4 text-muted-foreground text-lg">Tailored packaging solutions for every sector across North America.</p>
+const SCROLL_AMOUNT = 480;
+
+const IndustriesSection = () => {
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const isDragging = useRef(false);
+  const startX = useRef(0);
+  const scrollStart = useRef(0);
+
+  const scrollLeft  = () => scrollRef.current?.scrollBy({ left: -SCROLL_AMOUNT, behavior: "smooth" });
+  const scrollRight = () => scrollRef.current?.scrollBy({ left:  SCROLL_AMOUNT, behavior: "smooth" });
+
+  const onMouseDown = (e: React.MouseEvent) => {
+    isDragging.current = true;
+    startX.current = e.pageX;
+    scrollStart.current = scrollRef.current?.scrollLeft ?? 0;
+    if (scrollRef.current) scrollRef.current.style.cursor = "grabbing";
+  };
+
+  const onMouseMove = (e: React.MouseEvent) => {
+    if (!isDragging.current || !scrollRef.current) return;
+    e.preventDefault();
+    scrollRef.current.scrollLeft = scrollStart.current - (e.pageX - startX.current);
+  };
+
+  const stopDrag = () => {
+    isDragging.current = false;
+    if (scrollRef.current) scrollRef.current.style.cursor = "grab";
+  };
+
+  return (
+    <section id="industries" className="py-20 md:py-28 bg-card overflow-hidden">
+      <div className="container">
+        <div className="text-center max-w-2xl mx-auto mb-14">
+          <span className="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-semibold mb-4 tracking-wide uppercase">
+            Industries
+          </span>
+          <h2 className="text-3xl md:text-4xl font-extrabold text-foreground">Industries We Serve</h2>
+          <p className="mt-4 text-muted-foreground text-lg">Tailored packaging solutions for every sector across North America.</p>
+        </div>
       </div>
-    </div>
 
-    <div className="relative">
-      {/* Fade edges */}
-      <div className="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-card to-transparent z-10 pointer-events-none" />
-      <div className="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-card to-transparent z-10 pointer-events-none" />
+      <div className="relative px-10">
+        {/* Left arrow */}
+        <button
+          onClick={scrollLeft}
+          className="absolute left-1 top-1/2 -translate-y-1/2 z-10 w-9 h-9 bg-white border border-border shadow-md rounded-full flex items-center justify-center hover:bg-primary hover:text-white hover:border-primary transition-colors duration-200"
+          aria-label="Scroll left"
+        >
+          <ChevronLeft className="w-5 h-5" />
+        </button>
 
-      <div className="flex animate-marquee gap-4 w-max hover:[animation-play-state:paused]">
-        {[...industries, ...industries].map((ind, i) => (
-          <div
-            key={`${ind.name}-${i}`}
-            className="flex-shrink-0 w-36 md:w-44 bg-secondary rounded-xl border border-border p-3 text-center group"
-          >
-            <div className="w-full h-32 md:h-36 flex items-center justify-center mb-2 overflow-hidden rounded-lg">
-              <img
-                src={ind.image}
-                alt={ind.name}
-                loading="lazy"
-                width={176}
-                height={144}
-                className="w-full h-full object-cover"
-              />
+        {/* Scrollable track */}
+        <div
+          ref={scrollRef}
+          className="flex gap-4 overflow-x-auto select-none scrollbar-hide"
+          style={{ cursor: "grab", WebkitOverflowScrolling: "touch" } as React.CSSProperties}
+          onMouseDown={onMouseDown}
+          onMouseMove={onMouseMove}
+          onMouseUp={stopDrag}
+          onMouseLeave={stopDrag}
+        >
+          {industries.map((ind, i) => (
+            <div
+              key={`${ind.name}-${i}`}
+              className="flex-shrink-0 w-36 md:w-44 bg-secondary rounded-xl border border-border p-3 text-center pointer-events-none"
+            >
+              <div className="w-full h-32 md:h-36 flex items-center justify-center mb-2 overflow-hidden rounded-lg">
+                <img
+                  src={ind.image}
+                  alt={ind.name}
+                  loading="lazy"
+                  width={176}
+                  height={144}
+                  className="w-full h-full object-cover"
+                  draggable={false}
+                />
+              </div>
+              <p className="text-xs md:text-sm font-bold text-foreground leading-snug">{ind.name}</p>
             </div>
-            <p className="text-xs md:text-sm font-bold text-foreground leading-snug">{ind.name}</p>
-          </div>
-        ))}
+          ))}
+        </div>
+
+        {/* Right arrow */}
+        <button
+          onClick={scrollRight}
+          className="absolute right-1 top-1/2 -translate-y-1/2 z-10 w-9 h-9 bg-white border border-border shadow-md rounded-full flex items-center justify-center hover:bg-primary hover:text-white hover:border-primary transition-colors duration-200"
+          aria-label="Scroll right"
+        >
+          <ChevronRight className="w-5 h-5" />
+        </button>
       </div>
-    </div>
-  </section>
-);
+    </section>
+  );
+};
 
 export default IndustriesSection;
