@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import indApparel       from "@/assets/ind-apparel.png";
 import indAutomotive    from "@/assets/ind-automotive.png";
@@ -65,14 +65,36 @@ const SCROLL_AMOUNT = 480;
 const IndustriesSection = () => {
   const scrollRef = useRef<HTMLDivElement>(null);
   const isDragging = useRef(false);
+  const isPaused = useRef(false);
   const startX = useRef(0);
   const scrollStart = useRef(0);
+  const rafRef = useRef<number | null>(null);
+
+  useEffect(() => {
+    const el = scrollRef.current;
+    if (!el) return;
+    let last = performance.now();
+    const step = (now: number) => {
+      const dt = now - last;
+      last = now;
+      if (!isPaused.current && el) {
+        el.scrollLeft += (dt / 16) * 0.8;
+        if (el.scrollLeft >= el.scrollWidth - el.clientWidth) {
+          el.scrollLeft = 0;
+        }
+      }
+      rafRef.current = requestAnimationFrame(step);
+    };
+    rafRef.current = requestAnimationFrame(step);
+    return () => { if (rafRef.current) cancelAnimationFrame(rafRef.current); };
+  }, []);
 
   const scrollLeft  = () => scrollRef.current?.scrollBy({ left: -SCROLL_AMOUNT, behavior: "smooth" });
   const scrollRight = () => scrollRef.current?.scrollBy({ left:  SCROLL_AMOUNT, behavior: "smooth" });
 
   const onMouseDown = (e: React.MouseEvent) => {
     isDragging.current = true;
+    isPaused.current = true;
     startX.current = e.pageX;
     scrollStart.current = scrollRef.current?.scrollLeft ?? 0;
     if (scrollRef.current) scrollRef.current.style.cursor = "grabbing";
@@ -86,8 +108,12 @@ const IndustriesSection = () => {
 
   const stopDrag = () => {
     isDragging.current = false;
+    isPaused.current = false;
     if (scrollRef.current) scrollRef.current.style.cursor = "grab";
   };
+
+  const onTouchStart = () => { isPaused.current = true; };
+  const onTouchEnd   = () => { setTimeout(() => { isPaused.current = false; }, 1200); };
 
   return (
     <section id="industries" className="py-20 md:py-28 bg-card overflow-hidden">
@@ -120,8 +146,10 @@ const IndustriesSection = () => {
           onMouseMove={onMouseMove}
           onMouseUp={stopDrag}
           onMouseLeave={stopDrag}
+          onTouchStart={onTouchStart}
+          onTouchEnd={onTouchEnd}
         >
-          {industries.map((ind, i) => (
+          {[...industries, ...industries].map((ind, i) => (
             <div
               key={`${ind.name}-${i}`}
               className="flex-shrink-0 w-36 md:w-44 bg-secondary rounded-xl border border-border p-3 text-center pointer-events-none"
