@@ -40,7 +40,7 @@ const ProductCard = ({ name, description, image, href }: ProductCardProps) => {
               className="mt-3 w-full font-semibold"
               size="sm"
             >
-              Get a Free Quote
+              Get a Quote
             </Button>
           )}
         </div>
