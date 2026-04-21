@@ -50,7 +50,7 @@ const MidCTAStrip = () => {
             <Button
               size="lg"
               variant="outline"
-              className="font-semibold text-base border-white/30 text-white hover:bg-white/10 hover:text-white"
+              className="font-semibold text-base bg-transparent border-white/50 text-white hover:bg-white/15 hover:text-white"
               onClick={() => setConsultOpen(true)}
             >
               <CalendarClock className="mr-2 w-4 h-4" />
