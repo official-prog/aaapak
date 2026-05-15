@@ -17,7 +17,7 @@ const MidCTAStrip = () => {
 
   return (
     <>
-      <section className="py-20 md:py-24 bg-primary overflow-hidden relative">
+      <section className="py-12 md:py-24 bg-primary overflow-hidden relative">
         {/* Background decoration */}
         <div className="absolute inset-0 opacity-10" style={{
           backgroundImage: "radial-gradient(circle at 20% 50%, white 1px, transparent 1px), radial-gradient(circle at 80% 20%, white 1px, transparent 1px)",
@@ -25,32 +25,31 @@ const MidCTAStrip = () => {
         }} />
 
         <div className="container text-center relative">
-          {/* Urgency pill */}
-          <span className="inline-block px-4 py-1.5 rounded-full bg-white/15 text-white text-xs font-semibold mb-5 tracking-wide uppercase">
+          <span className="inline-block px-4 py-1.5 rounded-full bg-white/15 text-white text-xs font-semibold mb-4 tracking-wide uppercase">
             Air and Sea Freight Available
           </span>
 
-          <h2 className="text-3xl md:text-4xl font-black text-white mb-4 max-w-2xl mx-auto">
+          <h2 className="text-2xl md:text-4xl font-black text-white mb-3 md:mb-4 max-w-2xl mx-auto">
             From Boxes to Bags to Displays. We Build It All.
           </h2>
-          <p className="text-white/80 text-lg mb-8 max-w-xl mx-auto leading-relaxed">
+          <p className="text-white/80 text-sm sm:text-base md:text-lg mb-5 md:mb-8 max-w-xl mx-auto leading-relaxed">
             Corrugated boxes, rigid gift boxes, stand-up pouches, retail bags, display stands, and more. Every packaging format your brand needs, built and shipped factory-direct to USA and Canada.
           </p>
 
           {/* CTA buttons */}
-          <div className="flex flex-wrap gap-4 justify-center mb-10">
+          <div className="flex flex-col sm:flex-row gap-3 justify-center mb-6 md:mb-10">
             <Button
-              size="lg"
+              size="sm"
               variant="secondary"
-              className="font-semibold text-base px-8"
+              className="font-semibold text-sm sm:text-base sm:px-8 sm:h-12"
               onClick={() => setQuoteOpen(true)}
             >
               Start My Quote Now <ArrowRight className="ml-2 w-4 h-4" />
             </Button>
             <Button
-              size="lg"
+              size="sm"
               variant="outline"
-              className="font-semibold text-base bg-transparent border-white/50 text-white hover:bg-white/15 hover:text-white"
+              className="font-semibold text-sm sm:text-base bg-transparent border-white/50 text-white hover:bg-white/15 hover:text-white sm:h-12"
               onClick={() => setConsultOpen(true)}
             >
               <CalendarClock className="mr-2 w-4 h-4" />
@@ -59,9 +58,9 @@ const MidCTAStrip = () => {
           </div>
 
           {/* Guarantee badges */}
-          <div className="flex flex-wrap justify-center gap-4 md:gap-8">
+          <div className="flex flex-wrap justify-center gap-3 md:gap-8">
             {guarantees.map((g) => (
-              <div key={g.text} className="flex items-center gap-2 text-white/90 text-sm font-medium">
+              <div key={g.text} className="flex items-center gap-2 text-white/90 text-xs sm:text-sm font-medium">
                 <span className="text-white/70">{g.icon}</span>
                 {g.text}
               </div>

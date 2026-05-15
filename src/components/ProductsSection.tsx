@@ -32,20 +32,24 @@ const products = [
 ];
 
 const ProductsSection = () => (
-  <section id="products" className="py-20 md:py-28 bg-background scroll-mt-28">
+  <section id="products" className="py-12 md:py-28 bg-background scroll-mt-28">
     <div className="container">
-      <div className="text-center max-w-2xl mx-auto mb-14">
-        <span className="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-semibold mb-4 tracking-wide uppercase">
+      <div className="text-center max-w-2xl mx-auto mb-8 md:mb-14">
+        <span className="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-semibold mb-3 md:mb-4 tracking-wide uppercase">
           Our Products
         </span>
-        <h2 className="text-3xl md:text-4xl font-extrabold text-foreground">Explore Our Packaging Solutions</h2>
-        <p className="mt-4 text-muted-foreground text-lg">
+        <h2 className="text-2xl md:text-4xl font-extrabold text-foreground">Explore Our Packaging Solutions</h2>
+        <p className="mt-2 md:mt-4 text-muted-foreground text-base md:text-lg">
           Premium custom packaging for every industry and brand need.
         </p>
       </div>
-      <div className="grid grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4 md:gap-6">
-        {products.map((p) => (
-          <div key={p.name} id={p.id} className="scroll-mt-32">
+      <div className="grid grid-cols-2 md:grid-cols-3 gap-2.5 sm:gap-4 md:gap-6">
+        {products.map((p, i) => (
+          <div
+            key={p.name}
+            id={p.id}
+            className={`scroll-mt-32 h-full${i === products.length - 1 && products.length % 2 !== 0 ? " col-span-2 md:col-span-1" : ""}`}
+          >
             <ProductCard name={p.name} description={p.description} image={p.image} href={p.href} />
           </div>
         ))}

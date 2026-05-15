@@ -43,25 +43,25 @@ const BenefitsSection = () => {
 
   return (
     <>
-      <section id="why-us" className="py-20 md:py-28 bg-secondary overflow-hidden scroll-mt-28">
+      <section id="why-us" className="py-12 md:py-28 bg-secondary overflow-hidden scroll-mt-28">
         <div className="container">
           {/* Header */}
-          <div className="text-center max-w-2xl mx-auto mb-14">
-            <span className="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-semibold mb-4 tracking-wide">
+          <div className="text-center max-w-2xl mx-auto mb-8 md:mb-14">
+            <span className="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-semibold mb-3 tracking-wide">
               Why AAA Pak
             </span>
-            <h2 className="text-3xl md:text-4xl font-extrabold text-foreground">
+            <h2 className="text-2xl md:text-4xl font-extrabold text-foreground">
               Why <span className="text-primary">AAA Pak</span>
             </h2>
-            <p className="mt-4 text-muted-foreground text-lg">
+            <p className="mt-2 md:mt-4 text-muted-foreground text-base md:text-lg">
               End-to-end support from sourcing to delivery, backed by expertise and reliable communication.
             </p>
           </div>
 
           {/* 4 reason cards */}
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-16">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-5 mb-8 md:mb-16">
             {reasons.map((r) => (
-              <div key={r.title} className="bg-card border border-border rounded-2xl p-6 hover:shadow-lg hover:border-primary/30 transition-all duration-300">
+              <div key={r.title} className="bg-card border border-border rounded-2xl p-4 sm:p-6 hover:shadow-lg hover:border-primary/30 transition-all duration-300">
                 <div className="mb-4 pb-4 border-b border-border">
                   <p className="text-3xl font-extrabold text-primary leading-none">{r.stat}</p>
                   <p className="text-xs text-muted-foreground mt-1">{r.statSub}</p>
@@ -73,7 +73,7 @@ const BenefitsSection = () => {
           </div>
 
           {/* CTAs */}
-          <div className="flex flex-wrap justify-center gap-3 mb-16">
+          <div className="flex flex-wrap justify-center gap-3 mb-8 md:mb-16">
             <button
               onClick={() => setQuoteOpen(true)}
               className="inline-flex items-center gap-2 bg-primary text-white font-semibold px-6 py-3 rounded-xl hover:bg-primary/90 transition-colors"
@@ -111,13 +111,13 @@ const BenefitsSection = () => {
                 21+ Industries.<br />
                 <span className="text-primary">One Packaging Partner.</span>
               </h3>
-              <p className="mt-4 text-muted-foreground text-lg max-w-md">
+              <p className="mt-3 md:mt-4 text-muted-foreground text-base md:text-lg max-w-md">
                 From food and cosmetics to retail, apparel, e-commerce, and lifestyle brands, we create custom packaging solutions for businesses across USA &amp; Canada.
               </p>
 
               <button
                 onClick={() => setQuoteOpen(true)}
-                className="mt-8 inline-flex items-center gap-2 bg-primary text-white font-semibold px-6 py-3 rounded-xl hover:bg-primary/90 transition-colors"
+                className="mt-5 md:mt-8 inline-flex items-center gap-2 bg-primary text-white font-semibold px-6 py-3 rounded-xl hover:bg-primary/90 transition-colors"
               >
                 Get a Free Quote <ArrowRight className="w-4 h-4" />
               </button>

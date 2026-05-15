@@ -124,18 +124,18 @@ const IndustriesSection = () => {
   const onTouchEnd   = () => { setTimeout(() => { isPaused.current = false; }, 1200); };
 
   return (
-    <section id="industries" className="py-20 md:py-28 bg-card overflow-hidden scroll-mt-28">
+    <section id="industries" className="py-12 md:py-28 bg-card overflow-hidden scroll-mt-28">
       <div className="container">
-        <div className="text-center max-w-2xl mx-auto mb-14">
-          <span className="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-semibold mb-4 tracking-wide uppercase">
+        <div className="text-center max-w-2xl mx-auto mb-8 md:mb-14">
+          <span className="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-semibold mb-3 tracking-wide uppercase">
             Industries
           </span>
-          <h2 className="text-3xl md:text-4xl font-extrabold text-foreground">Industries We Serve</h2>
-          <p className="mt-4 text-muted-foreground text-lg">Tailored packaging solutions for every sector across North America.</p>
+          <h2 className="text-2xl md:text-4xl font-extrabold text-foreground">Industries We Serve</h2>
+          <p className="mt-2 md:mt-4 text-muted-foreground text-base md:text-lg">Tailored packaging solutions for every sector across North America.</p>
         </div>
       </div>
 
-      <div className="relative px-10">
+      <div className="relative px-8 sm:px-10">
         {/* Left arrow */}
         <button
           onClick={scrollLeft}
@@ -160,9 +160,9 @@ const IndustriesSection = () => {
           {[...industries, ...industries].map((ind, i) => (
             <div
               key={`${ind.name}-${i}`}
-              className="flex-shrink-0 w-[243px] md:w-[298px] bg-secondary rounded-xl border border-border p-3 text-center hover:shadow-md hover:border-primary/30 transition-all duration-200"
+              className="flex-shrink-0 w-[160px] sm:w-[200px] md:w-[243px] bg-secondary rounded-xl border border-border p-2 sm:p-3 text-center hover:shadow-md hover:border-primary/30 transition-all duration-200"
             >
-              <div className="w-full h-[216px] md:h-[243px] flex items-center justify-center mb-2 overflow-hidden rounded-lg">
+              <div className="w-full h-[140px] sm:h-[180px] md:h-[216px] flex items-center justify-center mb-2 overflow-hidden rounded-lg">
                 <img
                   src={ind.image}
                   alt={ind.name}

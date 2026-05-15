@@ -10,7 +10,6 @@ const WhatsAppIcon = () => (
 );
 import { useState } from "react";
 
-// Generate weekday dates for next 14 days
 const getAvailableDates = () => {
   const dates: Date[] = [];
   const today = new Date();
@@ -108,20 +107,20 @@ const ContactSection = () => {
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4" onClick={() => setShowPopup(false)}>
       <div className="absolute inset-0 bg-black/50 backdrop-blur-sm" />
       <div
-        className="relative bg-card rounded-2xl shadow-2xl p-10 max-w-md w-full text-center animate-fade-in-up"
+        className="relative bg-card rounded-2xl shadow-2xl p-6 sm:p-10 max-w-md w-full text-center"
         onClick={(e) => e.stopPropagation()}
       >
         <button onClick={() => setShowPopup(false)} className="absolute top-4 right-4 text-muted-foreground hover:text-foreground transition-colors">
           <X className="w-5 h-5" />
         </button>
-        <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-5">
-          <CheckCircle className="w-10 h-10 text-green-600" />
+        <div className="w-16 h-16 sm:w-20 sm:h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+          <CheckCircle className="w-8 h-8 sm:w-10 sm:h-10 text-green-600" />
         </div>
-        <h3 className="text-2xl font-extrabold text-foreground mb-2">Quote Submitted!</h3>
-        <p className="text-muted-foreground leading-relaxed mb-6">
+        <h3 className="text-xl sm:text-2xl font-extrabold text-foreground mb-2">Quote Submitted!</h3>
+        <p className="text-muted-foreground leading-relaxed mb-4 text-sm sm:text-base">
           Thank you! Our packaging experts will get back to you within <span className="font-semibold text-foreground">24 hours</span> with a custom quote.
         </p>
-        <div className="bg-secondary rounded-xl p-4 text-sm text-muted-foreground mb-6">
+        <div className="bg-secondary rounded-xl p-3 sm:p-4 text-xs sm:text-sm text-muted-foreground mb-4">
           📧 Confirmation will be sent to your email.<br />
           📞 Urgent? Call <span className="font-semibold text-foreground">1888 228 8165</span>
         </div>
@@ -132,30 +131,28 @@ const ContactSection = () => {
 
   {/* Consultation Scheduler Modal */}
   {showConsult && (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4" onClick={closeConsult}>
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4" onClick={closeConsult}>
       <div className="absolute inset-0 bg-black/50 backdrop-blur-sm" />
       <div
-        className="relative bg-card rounded-2xl shadow-2xl p-8 max-w-lg w-full animate-fade-in-up max-h-[90vh] overflow-y-auto"
+        className="relative bg-card rounded-2xl shadow-2xl p-5 sm:p-8 max-w-lg w-full max-h-[92vh] overflow-y-auto"
         onClick={(e) => e.stopPropagation()}
       >
-        <button onClick={closeConsult} className="absolute top-4 right-4 text-muted-foreground hover:text-foreground transition-colors">
+        <button onClick={closeConsult} className="absolute top-3 right-3 text-muted-foreground hover:text-foreground transition-colors">
           <X className="w-5 h-5" />
         </button>
 
         {consultSubmitted ? (
-          <div className="text-center py-6">
-            <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-5">
-              <CheckCircle className="w-10 h-10 text-green-600" />
+          <div className="text-center py-4">
+            <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <CheckCircle className="w-8 h-8 text-green-600" />
             </div>
-            <h3 className="text-2xl font-extrabold text-foreground mb-2">Consultation Booked!</h3>
-            <p className="text-muted-foreground mb-4">
-              Your call is scheduled for:
-            </p>
-            <div className="bg-primary/10 rounded-xl p-4 mb-6">
-              <p className="font-bold text-foreground text-lg">{selectedDate && formatDate(selectedDate)}</p>
-              <p className="text-primary font-semibold">{selectedTime} EST</p>
+            <h3 className="text-xl font-extrabold text-foreground mb-2">Consultation Booked!</h3>
+            <p className="text-muted-foreground mb-3 text-sm">Your call is scheduled for:</p>
+            <div className="bg-primary/10 rounded-xl p-3 mb-4">
+              <p className="font-bold text-foreground">{selectedDate && formatDate(selectedDate)}</p>
+              <p className="text-primary font-semibold text-sm">{selectedTime} EST</p>
             </div>
-            <p className="text-sm text-muted-foreground mb-6">
+            <p className="text-xs text-muted-foreground mb-4">
               📞 We'll call you at the number provided.<br />
               Toll free: <span className="font-semibold text-foreground">1 888 228 8165</span>
             </p>
@@ -163,33 +160,31 @@ const ContactSection = () => {
           </div>
         ) : (
           <>
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
-                <CalendarClock className="w-5 h-5 text-primary" />
+            <div className="flex items-center gap-3 mb-4">
+              <div className="w-9 h-9 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
+                <CalendarClock className="w-4 h-4 text-primary" />
               </div>
               <div>
-                <h3 className="font-bold text-lg text-foreground">Consult with our Experts</h3>
-                <p className="text-xs text-muted-foreground">Mon–Fri · 9:30 AM – 5:00 PM EST · Toll free: 1 888 228 8165</p>
+                <h3 className="font-bold text-base text-foreground">Consult with our Experts</h3>
+                <p className="text-xs text-muted-foreground">Mon–Fri · 9:30 AM – 5:00 PM EST</p>
               </div>
             </div>
 
-            <form onSubmit={handleConsultSubmit} className="space-y-5">
-              {/* Name + Phone */}
-              <div className="grid sm:grid-cols-2 gap-3">
-                <Input placeholder="Your Name" required value={consultName} onChange={(e) => setConsultName(e.target.value)} />
-                <Input placeholder="Phone Number" required value={consultPhone} onChange={(e) => setConsultPhone(e.target.value)} />
+            <form onSubmit={handleConsultSubmit} className="space-y-4">
+              <div className="grid grid-cols-2 gap-2">
+                <Input placeholder="Your Name" required value={consultName} onChange={(e) => setConsultName(e.target.value)} className="h-9 text-sm" />
+                <Input placeholder="Phone Number" required value={consultPhone} onChange={(e) => setConsultPhone(e.target.value)} className="h-9 text-sm" />
               </div>
 
-              {/* Date picker */}
               <div>
-                <p className="text-sm font-semibold text-foreground mb-2">Select Date</p>
-                <div className="grid grid-cols-3 sm:grid-cols-4 gap-2">
+                <p className="text-xs font-semibold text-foreground mb-2">Select Date</p>
+                <div className="grid grid-cols-4 sm:grid-cols-5 gap-1.5">
                   {availableDates.map((d) => (
                     <button
                       type="button"
                       key={d.toISOString()}
                       onClick={() => setSelectedDate(d)}
-                      className={`text-xs py-2 px-1 rounded-lg border text-center transition-all ${
+                      className={`text-[10px] py-1.5 px-1 rounded-lg border text-center transition-all ${
                         selectedDate?.toDateString() === d.toDateString()
                           ? "bg-primary text-white border-primary font-semibold"
                           : "border-border hover:border-primary hover:text-primary"
@@ -202,17 +197,16 @@ const ContactSection = () => {
                 </div>
               </div>
 
-              {/* Time slots */}
               {selectedDate && (
                 <div>
-                  <p className="text-sm font-semibold text-foreground mb-2">Select Time <span className="text-muted-foreground font-normal">(EST)</span></p>
-                  <div className="grid grid-cols-4 gap-2">
+                  <p className="text-xs font-semibold text-foreground mb-2">Select Time <span className="text-muted-foreground font-normal">(EST)</span></p>
+                  <div className="grid grid-cols-4 gap-1.5">
                     {TIME_SLOTS.map((t) => (
                       <button
                         type="button"
                         key={t}
                         onClick={() => setSelectedTime(t)}
-                        className={`text-xs py-2 rounded-lg border transition-all ${
+                        className={`text-[10px] py-1.5 rounded-lg border transition-all ${
                           selectedTime === t
                             ? "bg-primary text-white border-primary font-semibold"
                             : "border-border hover:border-primary hover:text-primary"
@@ -225,11 +219,7 @@ const ContactSection = () => {
                 </div>
               )}
 
-              <Button
-                className="w-full font-semibold h-11"
-                type="submit"
-                disabled={!selectedDate || !selectedTime}
-              >
+              <Button className="w-full font-semibold h-10" type="submit" disabled={!selectedDate || !selectedTime}>
                 Confirm Consultation
               </Button>
             </form>
@@ -239,52 +229,53 @@ const ContactSection = () => {
     </div>
   )}
 
-  <section id="contact" className="py-20 md:py-28 bg-secondary scroll-mt-28">
+  <section id="contact" className="py-12 md:py-28 bg-secondary scroll-mt-28">
     <div className="container">
-      <div className="grid lg:grid-cols-2 gap-12 items-start">
+      <div className="grid lg:grid-cols-2 gap-8 md:gap-12 items-start">
+
         {/* Info */}
         <div>
-          <span className="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-semibold mb-4 tracking-wide uppercase">
+          <span className="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-semibold mb-3 tracking-wide uppercase">
             Get In Touch
           </span>
-          <h2 className="text-3xl md:text-4xl font-extrabold text-foreground mb-4">
+          <h2 className="text-2xl md:text-4xl font-extrabold text-foreground mb-3 md:mb-4">
             Ready to Create Your <span className="text-primary">Custom Packaging</span>?
           </h2>
-          <p className="text-muted-foreground text-lg mb-8 leading-relaxed">
+          <p className="text-muted-foreground text-base md:text-lg mb-5 md:mb-8 leading-relaxed">
             Tell us about your project and get a custom quote within 24 hours. Our packaging experts are here to help.
           </p>
-          <div className="space-y-5">
+          <div className="space-y-3 sm:space-y-5">
             {[
-              { icon: Mail,    label: "quote@aaapak.com",  sub: "We reply within 2 hours" },
-              { icon: MapPin,  label: "Toronto, ON",        sub: "Serving all of USA & Canada" },
+              { icon: Mail,   label: "quote@aaapak.com", sub: "We reply within 2 hours" },
+              { icon: MapPin, label: "Toronto, ON",       sub: "Serving all of USA & Canada" },
             ].map((item) => (
-              <div key={item.label} className="flex items-start gap-4">
-                <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
+              <div key={item.label} className="flex items-start gap-3">
+                <div className="w-9 h-9 md:w-10 md:h-10 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
                   <item.icon className="w-4 h-4 text-primary" />
                 </div>
                 <div>
-                  <p className="font-semibold text-foreground">{item.label}</p>
-                  <p className="text-sm text-muted-foreground">{item.sub}</p>
+                  <p className="font-semibold text-foreground text-sm md:text-base">{item.label}</p>
+                  <p className="text-xs md:text-sm text-muted-foreground">{item.sub}</p>
                 </div>
               </div>
             ))}
-            <div className="flex items-start gap-4">
-              <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
+            <div className="flex items-start gap-3">
+              <div className="w-9 h-9 md:w-10 md:h-10 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
                 <WhatsAppIcon />
               </div>
               <div>
-                <p className="font-semibold text-foreground">+1 416 435 2256</p>
-                <p className="text-sm text-muted-foreground">Chat with us on WhatsApp</p>
+                <p className="font-semibold text-foreground text-sm md:text-base">+1 416 435 2256</p>
+                <p className="text-xs md:text-sm text-muted-foreground">Chat with us on WhatsApp</p>
               </div>
             </div>
           </div>
 
           {/* Book Consultation */}
-          <div className="mt-8 p-5 bg-card rounded-xl border border-border">
+          <div className="mt-5 md:mt-8 p-4 sm:p-5 bg-card rounded-xl border border-border">
             <p className="text-xs text-muted-foreground uppercase tracking-wide font-semibold mb-1">Call us toll free</p>
-            <p className="text-xl font-extrabold text-foreground mb-3">1 888 228 8165</p>
-            <p className="text-sm text-muted-foreground mb-4">Book a free consultation with our packaging experts. Available Mon–Fri, 9:30 AM – 5:00 PM EST.</p>
-            <Button variant="outline" className="w-full font-semibold gap-2" onClick={() => setShowConsult(true)}>
+            <p className="text-lg md:text-xl font-extrabold text-foreground mb-2">1 888 228 8165</p>
+            <p className="text-xs md:text-sm text-muted-foreground mb-3">Book a free consultation with our packaging experts. Available Mon–Fri, 9:30 AM – 5:00 PM EST.</p>
+            <Button variant="outline" className="w-full font-semibold gap-2 h-9 md:h-10 text-sm" onClick={() => setShowConsult(true)}>
               <CalendarClock className="w-4 h-4" />
               Schedule a Consultation
             </Button>
@@ -292,36 +283,38 @@ const ContactSection = () => {
         </div>
 
         {/* Form */}
-        <div className="bg-card rounded-2xl border border-border p-6 shadow-sm">
-          <h3 className="font-heading font-bold text-lg text-foreground mb-5">Request a Custom Quote</h3>
-          <form className="space-y-3.5" onSubmit={handleSubmit}>
-            <div className="grid sm:grid-cols-2 gap-3">
-              <Input id="firstName" placeholder="First Name" required className="h-10 text-sm" />
-              <Input id="lastName"  placeholder="Last Name"  required className="h-10 text-sm" />
+        <div className="bg-card rounded-2xl border border-border p-4 sm:p-6 shadow-sm">
+          <h3 className="font-heading font-bold text-base sm:text-lg text-foreground mb-3 sm:mb-4">Request a Custom Quote</h3>
+          <form className="space-y-2 sm:space-y-3" onSubmit={handleSubmit}>
+            {/* Always 2-column on mobile */}
+            <div className="grid grid-cols-2 gap-2">
+              <Input id="firstName" placeholder="First Name" required className="h-9 text-xs sm:text-sm" />
+              <Input id="lastName"  placeholder="Last Name"  required className="h-9 text-xs sm:text-sm" />
             </div>
-            <div className="grid sm:grid-cols-2 gap-3">
-              <Input id="email" type="email" placeholder="Email Address" required className="h-10 text-sm" />
-              <Input id="phone" placeholder="Phone Number" className="h-10 text-sm" />
+            <div className="grid grid-cols-2 gap-2">
+              <Input id="email" type="email" placeholder="Email" required className="h-9 text-xs sm:text-sm" />
+              <Input id="phone" placeholder="Phone" className="h-9 text-xs sm:text-sm" />
             </div>
-            <div className="grid sm:grid-cols-2 gap-3">
-              <Input id="company"  placeholder="Company Name" className="h-10 text-sm" />
-              <Input id="product"  placeholder="Product (e.g. Mailer Boxes)" className="h-10 text-sm" />
+            <div className="grid grid-cols-2 gap-2">
+              <Input id="company" placeholder="Company" className="h-9 text-xs sm:text-sm" />
+              <Input id="product" placeholder="Product Type" className="h-9 text-xs sm:text-sm" />
             </div>
-            <div className="grid sm:grid-cols-2 gap-3">
-              <Input id="quantity"  placeholder="Quantity" className="h-10 text-sm" />
-              <Input id="timeFrame" placeholder="Time Frame (e.g. 2–4 weeks)" className="h-10 text-sm" />
+            <div className="grid grid-cols-2 gap-2">
+              <Input id="quantity"  placeholder="Quantity" className="h-9 text-xs sm:text-sm" />
+              <Input id="timeFrame" placeholder="Time Frame" className="h-9 text-xs sm:text-sm" />
             </div>
-            <Input id="couponCode" placeholder="Coupon Code (optional)" className="h-10 text-sm" />
-            <Textarea id="message" placeholder="Message" className="min-h-[72px] text-sm" />
-            <Textarea id="projectDescription" placeholder="Please describe your project (size, materials, artwork, special requirements…)" className="min-h-[90px] text-sm" />
-            <Button className="w-full font-semibold h-11 text-sm" type="submit">
+            <Input id="couponCode" placeholder="Coupon Code (optional)" className="h-9 text-xs sm:text-sm" />
+            <Textarea id="message" placeholder="Message" className="min-h-[56px] sm:min-h-[72px] text-xs sm:text-sm resize-none" />
+            <Textarea id="projectDescription" placeholder="Project description (size, materials, artwork, requirements…)" className="min-h-[64px] sm:min-h-[80px] text-xs sm:text-sm resize-none" />
+            <Button className="w-full font-semibold h-10 text-sm" type="submit">
               Submit Quote Request
             </Button>
-            <p className="text-xs text-center text-muted-foreground">
-              No obligation. Custom quote within 24 hours. Your info is safe with us.
+            <p className="text-[10px] sm:text-xs text-center text-muted-foreground">
+              No obligation · Custom quote within 24 hours · Your info is safe with us.
             </p>
           </form>
         </div>
+
       </div>
     </div>
   </section>

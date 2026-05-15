@@ -99,18 +99,18 @@ const ComparisonSection = () => {
 
   return (
     <>
-      <section className="py-20 md:py-28 bg-secondary">
+      <section className="py-12 md:py-28 bg-secondary">
         <div className="container">
 
-          <div className="text-center max-w-2xl mx-auto mb-14">
-            <span className="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-semibold mb-4 tracking-wide uppercase">
+          <div className="text-center max-w-2xl mx-auto mb-8 md:mb-14">
+            <span className="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-semibold mb-3 tracking-wide uppercase">
               Side by Side
             </span>
-            <h2 className="text-3xl md:text-4xl font-extrabold text-foreground">
+            <h2 className="text-2xl md:text-4xl font-extrabold text-foreground">
               What You Get With AAA Pak{" "}
               <span className="text-primary">vs. Other Packaging Companies</span>
             </h2>
-            <p className="mt-4 text-muted-foreground text-lg">
+            <p className="mt-2 md:mt-4 text-muted-foreground text-base md:text-lg">
               Many companies offer custom boxes. See how the service, support, and features compare.
             </p>
           </div>

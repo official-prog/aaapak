@@ -26,15 +26,15 @@ const items = [
 ];
 
 const StatsBarSection = () => (
-  <section className="py-20 bg-primary">
+  <section className="py-10 md:py-20 bg-primary">
     <div className="container">
-      <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-8 md:gap-10">
         {items.map((item) => (
-          <div key={item.num} className="flex items-start gap-5">
-            <span className={`text-5xl font-black leading-none shrink-0 ${item.color}`}>{item.num}</span>
+          <div key={item.num} className="flex items-start gap-3 sm:gap-5">
+            <span className={`text-3xl sm:text-5xl font-black leading-none shrink-0 ${item.color}`}>{item.num}</span>
             <div>
-              <p className="text-white font-extrabold text-base leading-snug mb-2 min-h-[2.5rem] flex items-start">{item.title}</p>
-              <p className="text-white/70 text-sm leading-relaxed">{item.desc}</p>
+              <p className="text-white font-extrabold text-xs sm:text-base leading-snug mb-1 sm:mb-2">{item.title}</p>
+              <p className="text-white/70 text-xs sm:text-sm leading-relaxed hidden sm:block">{item.desc}</p>
             </div>
           </div>
         ))}

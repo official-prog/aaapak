@@ -35,27 +35,26 @@ const steps = [
 ];
 
 const VisualProofSection = () => (
-  <section id="visual-proof" className="py-20 md:py-28 bg-secondary overflow-hidden">
+  <section id="visual-proof" className="py-12 md:py-28 bg-secondary overflow-hidden">
     <div className="container">
-      <div className="text-center max-w-2xl mx-auto mb-14">
-        <span className="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-semibold mb-4 tracking-wide uppercase">
+      <div className="text-center max-w-2xl mx-auto mb-8 md:mb-14">
+        <span className="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-semibold mb-3 tracking-wide uppercase">
           Simple Order Process
         </span>
-        <h2 className="text-3xl md:text-4xl font-extrabold text-foreground">
+        <h2 className="text-2xl md:text-4xl font-extrabold text-foreground">
           From Concept to <span className="text-primary">Unboxing</span>
         </h2>
-        <p className="mt-4 text-muted-foreground text-lg">
+        <p className="mt-2 md:mt-4 text-muted-foreground text-base md:text-lg">
           A simple and reliable order process for custom packaging.
         </p>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 md:gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-5 md:gap-6">
         {steps.map((s) => (
           <div
             key={s.label}
             className="bg-card border border-border rounded-2xl overflow-hidden hover:shadow-lg hover:border-primary/30 transition-all duration-300"
           >
-            {/* Image */}
             <div className="w-full aspect-[4/3] overflow-hidden">
               <img
                 src={s.img}
@@ -65,13 +64,12 @@ const VisualProofSection = () => (
               />
             </div>
 
-            {/* Card body */}
-            <div className="p-5">
-              <div className="flex items-center gap-3 mb-2">
-                <span className="text-2xl font-extrabold text-primary leading-none">{s.step}</span>
-                <h3 className="font-extrabold text-foreground text-base">{s.label}</h3>
+            <div className="p-4 sm:p-5">
+              <div className="flex items-center gap-2 sm:gap-3 mb-1.5 sm:mb-2">
+                <span className="text-xl sm:text-2xl font-extrabold text-primary leading-none">{s.step}</span>
+                <h3 className="font-extrabold text-foreground text-sm sm:text-base">{s.label}</h3>
               </div>
-              <p className="text-sm text-muted-foreground leading-relaxed">{s.desc}</p>
+              <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">{s.desc}</p>
             </div>
           </div>
         ))}

@@ -132,16 +132,16 @@ const FaqColumn = ({ items }: { items: typeof faqs }) => (
 );
 
 const FAQSection = () => (
-  <section id="faq" className="py-20 md:py-28 bg-card">
+  <section id="faq" className="py-12 md:py-28 bg-card">
     <div className="container">
-      <div className="text-center max-w-2xl mx-auto mb-14">
-        <span className="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-semibold mb-4 tracking-wide uppercase">
+      <div className="text-center max-w-2xl mx-auto mb-8 md:mb-14">
+        <span className="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-semibold mb-3 tracking-wide uppercase">
           FAQ
         </span>
-        <h2 className="text-3xl md:text-4xl font-extrabold text-foreground">
+        <h2 className="text-2xl md:text-4xl font-extrabold text-foreground">
           Frequently Asked Questions
         </h2>
-        <p className="mt-4 text-muted-foreground text-lg">
+        <p className="mt-2 md:mt-4 text-muted-foreground text-base md:text-lg">
           Everything you need to know about ordering custom packaging.
         </p>
       </div>

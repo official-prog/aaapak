@@ -57,27 +57,27 @@ const techniques = [
 ];
 
 const PrintingSection = () => (
-  <section className="py-20 md:py-28 bg-card">
+  <section className="py-12 md:py-28 bg-card">
     <div className="container">
-      <div className="text-center max-w-2xl mx-auto mb-14">
-        <span className="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-semibold mb-4 tracking-wide uppercase">
+      <div className="text-center max-w-2xl mx-auto mb-8 md:mb-14">
+        <span className="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-semibold mb-3 tracking-wide uppercase">
           Printing Capabilities
         </span>
-        <h2 className="text-3xl md:text-4xl font-extrabold text-foreground">
+        <h2 className="text-2xl md:text-4xl font-extrabold text-foreground">
           Advanced <span className="text-primary">Printing Techniques</span>
         </h2>
-        <p className="mt-4 text-muted-foreground text-lg">
+        <p className="mt-2 md:mt-4 text-muted-foreground text-base md:text-lg">
           State-of-the-art printing methods to bring your brand to life with precision and quality.
         </p>
       </div>
 
-      <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-6">
         {techniques.map((t) => (
           <div
             key={t.title}
             className="group rounded-2xl border border-border overflow-hidden bg-background hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
           >
-            <div className="h-52 overflow-hidden">
+            <div className="h-36 sm:h-44 md:h-52 overflow-hidden">
               <img
                 src={t.image}
                 alt={t.title}
@@ -85,9 +85,9 @@ const PrintingSection = () => (
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
               />
             </div>
-            <div className="p-6">
-              <h3 className="font-bold text-foreground text-base mb-2">{t.title}</h3>
-              <p className="text-sm text-muted-foreground leading-relaxed">{t.desc}</p>
+            <div className="p-3 sm:p-4 md:p-6">
+              <h3 className="font-bold text-foreground text-xs sm:text-sm md:text-base mb-1 sm:mb-2">{t.title}</h3>
+              <p className="text-[11px] sm:text-xs md:text-sm text-muted-foreground leading-relaxed hidden sm:block">{t.desc}</p>
             </div>
           </div>
         ))}

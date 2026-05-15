@@ -54,18 +54,18 @@ const steps = [
 ];
 
 const ProcessSection = () => (
-  <section id="process" className="py-20 md:py-28 bg-card">
+  <section id="process" className="py-12 md:py-28 bg-card">
     <div className="container">
 
       {/* Header */}
-      <div className="text-center max-w-2xl mx-auto mb-16">
-        <span className="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-semibold mb-4 tracking-wide uppercase">
+      <div className="text-center max-w-2xl mx-auto mb-8 md:mb-16">
+        <span className="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-semibold mb-3 tracking-wide uppercase">
           How It Works
         </span>
-        <h2 className="text-3xl md:text-4xl font-extrabold text-foreground">
+        <h2 className="text-2xl md:text-4xl font-extrabold text-foreground">
           From Idea to Your Door in <span className="text-primary">5 Simple Steps</span>
         </h2>
-        <p className="mt-4 text-muted-foreground text-lg">
+        <p className="mt-2 md:mt-4 text-muted-foreground text-base md:text-lg">
           Tell us your product and brand requirements. We handle design, production, and shipping from start to finish.
         </p>
       </div>
