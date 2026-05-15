@@ -123,9 +123,9 @@ const Footer = () => {
           <h4 className="font-heading font-bold text-sm mb-4 uppercase tracking-wider text-white border-b border-white/20 pb-2">Company</h4>
           <ul className="space-y-2.5">
             {[
-              { label: "About Us",       href: "/#why-us" },
-              { label: "Sustainability", href: "/#why-us" },
-              { label: "Contact",        href: "/#contact" },
+              { label: "About Us",   href: "/#why-us" },
+              { label: "Industries", href: "/#industries" },
+              { label: "Contact",    href: "/#contact" },
             ].map((link) => (
               <li key={link.label}>
                 <a href={link.href} className="text-sm text-white hover:text-white transition-colors">{link.label}</a>

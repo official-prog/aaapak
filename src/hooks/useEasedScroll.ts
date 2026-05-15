@@ -24,6 +24,23 @@ function smoothScrollTo(targetY: number, duration = 900) {
 
 export function useEasedScroll() {
   useEffect(() => {
+    if ("scrollRestoration" in window.history) {
+      window.history.scrollRestoration = "manual";
+    }
+
+    const saved = sessionStorage.getItem("scrollY");
+    if (saved !== null) {
+      const y = parseInt(saved, 10);
+      sessionStorage.removeItem("scrollY");
+      requestAnimationFrame(() => window.scrollTo(0, y));
+    }
+
+    const saveScroll = () => sessionStorage.setItem("scrollY", String(window.scrollY));
+    window.addEventListener("beforeunload", saveScroll);
+    return () => window.removeEventListener("beforeunload", saveScroll);
+  }, []);
+
+  useEffect(() => {
     const HEADER_OFFSET = 112; // matches scroll-mt-28 (7rem)
 
     const handleClick = (e: MouseEvent) => {

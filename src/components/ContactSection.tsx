@@ -231,7 +231,7 @@ const ContactSection = () => {
 
   <section id="contact" className="py-12 md:py-28 bg-secondary scroll-mt-28">
     <div className="container">
-      <div className="grid lg:grid-cols-2 gap-8 md:gap-12 items-start">
+      <div className="grid lg:grid-cols-2 gap-8 md:gap-12 items-stretch">
 
         {/* Info */}
         <div>
@@ -283,9 +283,9 @@ const ContactSection = () => {
         </div>
 
         {/* Form */}
-        <div className="bg-card rounded-2xl border border-border p-4 sm:p-6 shadow-sm">
+        <div className="bg-card rounded-2xl border border-border p-4 sm:p-6 shadow-sm h-full flex flex-col">
           <h3 className="font-heading font-bold text-base sm:text-lg text-foreground mb-3 sm:mb-4">Request a Custom Quote</h3>
-          <form className="space-y-2 sm:space-y-3" onSubmit={handleSubmit}>
+          <form className="flex flex-col flex-1 gap-2 sm:gap-3" onSubmit={handleSubmit}>
             {/* Always 2-column on mobile */}
             <div className="grid grid-cols-2 gap-2">
               <Input id="firstName" placeholder="First Name" required className="h-9 text-xs sm:text-sm" />
@@ -305,13 +305,15 @@ const ContactSection = () => {
             </div>
             <Input id="couponCode" placeholder="Coupon Code (optional)" className="h-9 text-xs sm:text-sm" />
             <Textarea id="message" placeholder="Message" className="min-h-[56px] sm:min-h-[72px] text-xs sm:text-sm resize-none" />
-            <Textarea id="projectDescription" placeholder="Project description (size, materials, artwork, requirements…)" className="min-h-[64px] sm:min-h-[80px] text-xs sm:text-sm resize-none" />
-            <Button className="w-full font-semibold h-10 text-sm" type="submit">
-              Submit Quote Request
-            </Button>
-            <p className="text-[10px] sm:text-xs text-center text-muted-foreground">
-              No obligation · Custom quote within 24 hours · Your info is safe with us.
-            </p>
+            <Textarea id="projectDescription" placeholder="Project description (size, materials, artwork, requirements…)" className="flex-1 min-h-[64px] sm:min-h-[80px] text-xs sm:text-sm resize-none" />
+            <div>
+              <Button className="w-full font-semibold h-10 text-sm" type="submit">
+                Submit Quote Request
+              </Button>
+              <p className="text-[10px] sm:text-xs text-center text-muted-foreground mt-2">
+                No obligation · Custom quote within 24 hours · Your info is safe with us.
+              </p>
+            </div>
           </form>
         </div>
 
